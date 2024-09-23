@@ -13,10 +13,12 @@ function OfferedServicesList(){
     },[])
 
     return <>
+    
         <ul>
             {services.map((service: {title: string, id: number, description: string})=> 
             <li key={service.id}>{service.title}--{service.description}</li>)}
         </ul>
+
     </>
 }
 
