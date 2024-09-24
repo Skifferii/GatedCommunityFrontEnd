@@ -9,19 +9,38 @@ interface UserData {
 
 function ProfilePage() {
     const [userData, setUserData] = useState<UserData | null>(null);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
 
     async function fetchUserData() {
-        const res = await fetch("/api/users");
-        const obj: UserData = await res.json();
-        setUserData(obj);
+        try {
+            const res = await fetch("/api/users");
+            if (!res.ok) {
+                throw new Error(`Error: ${res.status}`);
+            }
+            const obj: UserData = await res.json();
+            setUserData(obj);
+        } catch (err) {
+            setError("Не удалось загрузить данные пользователя.");
+        } finally {
+            setLoading(false);
+        }
     }
 
     useEffect(() => {
         fetchUserData();
     }, []);
 
-    if (!userData) {
+    if (loading) {
         return <div>Загрузка...</div>;
+    }
+
+    if (error) {
+        return <div>{error}</div>;
+    }
+
+    if (!userData) {
+        return <div>Данные пользователя отсутствуют.</div>;
     }
 
     return (
