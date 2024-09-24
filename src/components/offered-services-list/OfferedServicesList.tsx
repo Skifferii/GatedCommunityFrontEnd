@@ -4,6 +4,7 @@ function OfferedServicesList(){
     const [services, setServices] = useState([]);
     async function fetchServices(){
        const res = await fetch("/api/offered-services"); 
+       
        const obj =  await res.json();
        setServices(obj)
     }
