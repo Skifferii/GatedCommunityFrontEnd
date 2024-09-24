@@ -8,7 +8,7 @@ function GatedCommunity () {
     
   return (
     <Router>
-      <div className="App">
+      <div className="GatedCommunity">
         <nav>
           <Link to="/">Главная</Link>
           <Link to="/profile">Профиль</Link>
