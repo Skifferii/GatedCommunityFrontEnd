@@ -16,8 +16,7 @@ function OfferedServicesList(){
         <div>
             <header>
 
-            </header>
-            
+            </header>           
 
             <ul>
                 {services.map((service: {title: string, id: number, description: string})=> 
