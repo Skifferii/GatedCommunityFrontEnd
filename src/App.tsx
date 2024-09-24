@@ -1,7 +1,7 @@
-import { BrowserRouter as Router, Route, Routes, Link, BrowserRouter } from 'react-router-dom';
-//import HomePage from './components/HomePage/HomePage';
-import OfferedServicesList from './components/offered-services-list/OfferedServicesList'
+
+import { BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
 import ProfilePage from './components/ProfilePage/ProfilePage';
+//import HomePage from './components/HomePage/HomePage';
 //import RequestsPage from './components/RequestsPage/RequestsPage';
 
 function App() {
@@ -19,16 +19,9 @@ function App() {
           {/* <Route path="/requests" element={<RequestsPage />} /> */}
         </Routes>
       </div>
+        
     </Router>
   );
-  return (
-    <BrowserRouter>
-          
-      <OfferedServicesList/>
-    </BrowserRouter>
-  )
-
-
 }
 
 export default App;
