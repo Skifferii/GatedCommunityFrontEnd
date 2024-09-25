@@ -1,7 +1,12 @@
-import { SpinnerComponent } from "./styles";
+import React from 'react';
+import './Spinner.css'; // файл стилей для спиннера
 
-function Spinner (){
- return <SpinnerComponent></SpinnerComponent>
+const Spinner = () => {
+  return (
+    <div className="spinner-container">
+      <div className="spinner"></div>
+    </div>
+  );
 }
 
 export default Spinner;

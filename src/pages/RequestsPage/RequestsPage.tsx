@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import AddServiceForm from "../../components/add-service-form/AddServiceForm";
-import OfferedServicesList from "../../components/offered-services-list/OfferedServicesList";
+import RequestList from "../../components/request-list/RequestList";
+import RequestForm from "../../components/RequestForm/RequestForm";
+import './RequestsPage.css'; // Подключим файл со стилями
 
 function RequestsPage() {
   const [showComponent, setShowComponent] = useState<string | null>(null);
@@ -10,17 +11,29 @@ function RequestsPage() {
   };
 
   return (
-    <div className="Requests-page">
-      <h2>Service</h2>
-      <button type="button" onClick={() => handleShowComponent("addService")}>
-        Add service
-      </button>
-      <button type="button" onClick={() => handleShowComponent("offeredList")}>
-        Offered Services List
-      </button>
+    <div className="requests-page">
+      <h2>Requests Management</h2>
+      <div className="button-group">
+        <button
+          className={`toggle-button ${showComponent === "RequestForm" ? "active" : ""}`}
+          type="button"
+          onClick={() => handleShowComponent("RequestForm")}
+        >
+          Add Request
+        </button>
+        <button
+          className={`toggle-button ${showComponent === "RequestList" ? "active" : ""}`}
+          type="button"
+          onClick={() => handleShowComponent("RequestList")}
+        >
+          Request List
+        </button>
+      </div>
 
-      {showComponent === "addService" && <AddServiceForm />}
-      {showComponent === "offeredList" && <OfferedServicesList />}
+      <div className="component-container">
+        {showComponent === "RequestForm" && <RequestForm />}
+        {showComponent === "RequestList" && <RequestList />}
+      </div>
     </div>
   );
 }
