@@ -1,11 +1,16 @@
-import {
-  InputContainer, 
-  Label, 
-  InputElement,
-  ErrorMessage} from "./styles";
+import { InputContainer, Label, InputElement, ErrorMessage } from "./styles";
 import { InputProps } from "./types";
 
-function Input({ label, type, name, placeholder, id, value, onChange, error}: InputProps) {
+function Input({
+  label,
+  type = "text",
+  name,
+  placeholder,
+  id,
+  value,
+  onChange,
+  error,
+}: InputProps) {
   return (
     <InputContainer>
       <Label htmlFor={id}>{label}</Label>
@@ -17,7 +22,7 @@ function Input({ label, type, name, placeholder, id, value, onChange, error}: In
         value={value}
         onChange={onChange}
       />
-      <ErrorMessage>{error}</ErrorMessage>
+      <ErrorMessage> {error}</ErrorMessage>
     </InputContainer>
   );
 }

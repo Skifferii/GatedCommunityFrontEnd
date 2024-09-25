@@ -20,6 +20,7 @@ function ProfilePage() {
             }
             const obj: UserData = await res.json();
             setUserData(obj);
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (err) {
             setError("Не удалось загрузить данные пользователя.");
         } finally {
