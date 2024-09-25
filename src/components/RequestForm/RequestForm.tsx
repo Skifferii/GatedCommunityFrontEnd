@@ -39,6 +39,7 @@ function RequestForm() {
       const res = await fetch('/api/offered-services');
       const data = await res.json();
       setServices(data);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       console.error('Ошибка при загрузке услуг.');
     } finally {
@@ -52,6 +53,7 @@ function RequestForm() {
       const res = await fetch('/api/addresses');
       const data = await res.json();
       setAddresses(data);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       console.error('Ошибка при загрузке адресов.');
     } finally {
@@ -62,14 +64,13 @@ function RequestForm() {
   // Проверка userId
   const validateUser = async (userId: string) => {
     try {
-      const res = await fetch(`/api/users${userId}`);
+      const res = await fetch(`/api/users/${userId}`);
       if (res.ok) {
         setUserValid(true);
       } else {
-        // TODO  MUST CHANGE !!!!!!!!!!!!!! ACHTUNG ACHTUNG !!!!!
-        setUserValid(true); // TODO  MUST CHANGE !!!!!!!!!!!!!! ACHTUNG ACHTUNG !!!!!
-        // TODO  MUST CHANGE !!!!!!!!!!!!!! ACHTUNG ACHTUNG !!!!!
+        setUserValid(false);     
       }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       setUserValid(false);
     }

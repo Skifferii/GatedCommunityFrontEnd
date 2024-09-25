@@ -3,6 +3,11 @@ import React, { useEffect, useState } from "react";
 interface Request {
   id: string;
   propositionServiceId: string;
+  description: string;
+  picture?: string;
+  desiredDateTime: string;
+  userId: string;
+  addressId: string;
 }
 
 interface RequestListProps {

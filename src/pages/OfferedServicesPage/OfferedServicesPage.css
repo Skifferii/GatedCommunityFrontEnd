@@ -1,35 +1,51 @@
-.OfferedServices-page {
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    margin: 0 auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .Requests-page h2 {
-    margin-bottom: 10px;
-    text-align: center;
-    min-height: 100vh;
-    min-width: 100vh;
-  }
-  
-  .Requests-page p {
-    margin: 5px 0;
-  }
-  
-  .Requests-page button {
-    display: block;
-    margin: 10px auto;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .Requests-page button:hover {
-    background-color: #0056b3;
-  }
+.services-page {
+  background-color: #808080; /* Gray background */
+  color: #d3d3d3; /* Light gray text */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.button-group {
+  margin-bottom: 20px;
+}
+
+.toggle-button {
+  background-color: #6c757d;
+  color: #d3d3d3;
+  padding: 10px;
+  border: none;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.toggle-button.active {
+  background-color: #5a6268;
+}
+
+.form-container input,
+.form-container textarea {
+  display: block;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  background-color: #505050;
+  color: #d3d3d3;
+}
+
+.service-list select {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  background-color: #505050;
+  color: #d3d3d3;
+}
+
+.service-details {
+  margin-top: 20px;
+  background-color: #6c757d;
+  padding: 20px;
+  border-radius: 10px;
+}
