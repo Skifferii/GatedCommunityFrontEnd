@@ -1,18 +1,12 @@
-
-
-
-import { BrowserRouter } from 'react-router-dom'
-import OfferedServicesList from './components/offered-services-list/OfferedServicesList'
-
+import { BrowserRouter } from 'react-router-dom';
+import GatedCommunity from './pages/GatedCommunity';
 
 function App() {
-
-
   return (
-    <BrowserRouter>      
-      <OfferedServicesList/>
+    <BrowserRouter>
+      <GatedCommunity />
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
