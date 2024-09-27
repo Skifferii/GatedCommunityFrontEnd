@@ -15,7 +15,7 @@ function OfferedServicesList() {
 
       const obj = await res.json();
       setServices(obj);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       setError("Не удалось загрузить сервисы");
     } finally {
@@ -38,11 +38,13 @@ function OfferedServicesList() {
   return (
     <div>
       <ul>
-        {services.map((service: { title: string; id: number; description: string }) => (
-          <li key={service.id}>
-            {service.title} -- {service.description}
-          </li>
-        ))}
+        {services.map(
+          (service: { title: string; id: number; description: string }) => (
+            <li key={service.id}>
+              {service.title} -- {service.description}
+            </li>
+          )
+        )}
       </ul>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import RequestList from "../../components/request-list/RequestList";
 import RequestForm from "../../components/RequestForm/RequestForm";
-import './RequestsPage.css'; // Подключим файл со стилями
+import './RequestsPage.css'; 
 
 function RequestsPage() {
   const [showComponent, setShowComponent] = useState<string | null>(null);
@@ -40,21 +40,21 @@ function RequestsPage() {
 
   return (
     <div className="requests-page">
-      <h2>Управление запросами</h2>
+      <h2>Managing Requests</h2>
       <div className="button-group">
         <button
           className={`toggle-button ${showComponent === "RequestForm" ? "active" : ""}`}
           type="button"
           onClick={() => handleShowComponent("RequestForm")}
         >
-          Добавить запрос
+          Add request
         </button>
         <button
           className={`toggle-button ${showComponent === "RequestList" ? "active" : ""}`}
           type="button"
           onClick={() => handleShowComponent("RequestList")}
         >
-          Список запросов
+          Requst list
         </button>
       </div>
 
@@ -67,13 +67,13 @@ function RequestsPage() {
 
       {selectedRequest && (
         <div className="request-details">
-          <h3>Детали запроса</h3>
-          <p><strong>Описание:</strong> {selectedRequest.description}</p>
-          <p><strong>Изображение:</strong> <img src={selectedRequest.picture} alt="Request" /></p>
-          <p><strong>Желаемая дата и время:</strong> {selectedRequest.desiredDateTime}</p>
-          <p><strong>Услуга:</strong> {selectedRequest.serviceTitle} - {selectedRequest.serviceDescription}</p>
-          <p><strong>Пользователь:</strong> {selectedRequest.userName} ({selectedRequest.userEmail})</p>
-          <p><strong>Адрес:</strong> {selectedRequest.address}</p>
+          <h3>Request details</h3>
+          <p><strong>Request description:</strong> {selectedRequest.description}</p>
+          <p><strong>Photo:</strong> <img src={selectedRequest.picture} alt="Request" /></p>
+          <p><strong>Desired Date & Time:</strong> {selectedRequest.desiredDateTime}</p>
+          <p><strong>Service:</strong> {selectedRequest.serviceTitle} - {selectedRequest.serviceDescription}</p>
+          <p><strong>User:</strong> {selectedRequest.userName} ({selectedRequest.userEmail})</p>
+          <p><strong>Address:</strong> {selectedRequest.address}</p>
         </div>
       )}
     </div>
