@@ -1,0 +1,45 @@
+.requests-page {
+  background-color: #808080; /* Серый фон */
+  color: #d3d3d3; /* Светло-серый текст */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.button-group {
+  margin-bottom: 20px;
+}
+
+.toggle-button {
+  background-color: #6c757d;
+  color: #d3d3d3;
+  padding: 10px;
+  border: none;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.toggle-button.active {
+  background-color: #5a6268;
+}
+
+.request-list select {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  background-color: #505050;
+  color: #d3d3d3;
+}
+
+.request-details {
+  margin-top: 20px;
+  background-color: #6c757d;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.request-details img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
