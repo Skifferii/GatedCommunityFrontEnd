@@ -47,14 +47,18 @@ function OfferedServicesPage() {
       <h2>Услуги</h2>
       <div className="button-group">
         <button
-          className={`toggle-button ${showComponent === "addService" ? "active" : ""}`}
+          className={`toggle-button ${
+            showComponent === "addService" ? "active" : ""
+          }`}
           type="button"
           onClick={() => setShowComponent("addService")}
         >
           Добавить услугу
         </button>
         <button
-          className={`toggle-button ${showComponent === "offeredList" ? "active" : ""}`}
+          className={`toggle-button ${
+            showComponent === "offeredList" ? "active" : ""
+          }`}
           type="button"
           onClick={() => setShowComponent("offeredList")}
         >
@@ -84,9 +88,11 @@ function OfferedServicesPage() {
           {/* Отображение деталей выбранной услуги */}
           {selectedService && (
             <div className="service-details">
-              <h3>Детали услуги</h3>
+              <h3>Service details</h3>
               <p>Описание: {selectedService.description}</p>
-              {selectedService.image && <img src={selectedService.image} alt="Изображение услуги" />}
+              {selectedService.image && (
+                <img src={selectedService.image} alt="Изображение услуги" />
+              )}
             </div>
           )}
         </div>

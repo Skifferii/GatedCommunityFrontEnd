@@ -24,7 +24,7 @@ const RequestList: React.FC<RequestListProps> = ({ onSelectRequest }) => {
         const data = await response.json();
         setRequests(data);
       } catch (error) {
-        console.error("Ошибка при получении списка запросов", error);
+        console.error("Error getting list of requests", error);
       }
     };
 
@@ -33,9 +33,9 @@ const RequestList: React.FC<RequestListProps> = ({ onSelectRequest }) => {
 
   return (
     <div className="request-list">
-      <h3>Список запросов</h3>
+      <h3>List of requests</h3>
       <select onChange={(e) => onSelectRequest(e.target.value)}>
-        <option value="">Выберите запрос</option>
+        <option value="">Select your query</option>
         {requests.map((request) => (
           <option key={request.id} value={request.id}>
             {request.id} - {request.propositionServiceId}
