@@ -19,16 +19,15 @@ interface Address {
 function RequestForm() {
   const [services, setServices] = useState<Service[]>([]);
   const [addresses, setAddresses] = useState<Address[]>([]);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [userId, setUserId] = useState<string>("1"); // временное значение userId TODO
-  const [userValid, setUserValid] = useState<boolean | null>(null); // user verification
-  const [loading, setLoading] = useState<boolean>(true); // Global loading
+  const [userId, setUserId] = useState<string>("1");
+  const [userValid, setUserValid] = useState<boolean | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
   const [formData, setFormData] = useState({
     picture: "",
     propositionServiceId: "",
     description: "",
     desiredDateTime: "",
-    userId: "1", // временное значение
+    userId: "1",
     addressId: "",
   });
 
@@ -36,13 +35,12 @@ function RequestForm() {
   const [loadingAddresses, setLoadingAddresses] = useState(true);
   const [selectedTitle, setSelectedTitle] = useState<string>("");
 
-  // Функция для получения списка services
   async function fetchServices() {
     try {
       const res = await fetch("/api/offered-services");
       const data = await res.json();
       setServices(data);
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       console.error("Error loading services.");
     } finally {
@@ -50,13 +48,12 @@ function RequestForm() {
     }
   }
 
-  // Функция для получения списка addresses
   async function fetchAddresses() {
     try {
       const res = await fetch("/api/addresses");
       const data = await res.json();
       setAddresses(data);
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       console.error("Error loading addresses.");
     } finally {
@@ -64,7 +61,6 @@ function RequestForm() {
     }
   }
 
-  // Проверка userId
   const validateUser = async (userId: string) => {
     try {
       const res = await fetch(`/api/users/${userId}`);
@@ -73,7 +69,7 @@ function RequestForm() {
       } else {
         setUserValid(false);
       }
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       setUserValid(false);
     }
@@ -86,7 +82,6 @@ function RequestForm() {
     setLoading(false);
   }, []);
 
-  // Shape change handler /Обработчик изменения формы
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -101,7 +96,6 @@ function RequestForm() {
     }
   };
 
-  // Service Header Change Handler  /Обработчик изменения заголовка услуги
   const handleTitleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedTitle(e.target.value);
     setFormData({
@@ -110,7 +104,6 @@ function RequestForm() {
     });
   };
 
-  // Form Submission Handler /Обработчик отправки формы
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -147,7 +140,6 @@ function RequestForm() {
     return <Spinner />;
   }
 
-  // GROUP SERVICES ByTitle
   const groupedServices = services.reduce((groups, service) => {
     if (!groups[service.title]) {
       groups[service.title] = [];
@@ -229,31 +221,31 @@ function RequestForm() {
           <option value="">Select address</option>
           {addresses.map((address) => (
             <option key={address.id} value={address.id}>
-              {address.city}, {address.street} {address.numberHouse}
+              {address.city}, {address.street} {address.numberHouse}, Index:{" "}
+              {address.index}
             </option>
           ))}
         </select>
       </div>
 
       <div className="form-group">
-        // <label>User ID:</label>
-        //{" "}
+        <label>User Id:</label>
         <input
           type="text"
           name="userId"
           value={formData.userId}
           onChange={handleChange}
-          required
-          style={{ borderColor: userValid === false ? "red" : "" }}
         />
         {userValid === false && (
-          <span style={{ color: "red" }}>Пользователь не найден</span>
+          <p style={{ color: "red" }}>Неверный User ID.</p>
         )}
       </div>
 
-      <button type="submit" disabled={!userValid}>
-        Create Request
-      </button>
+      <div className="form-group">
+        <button type="submit" disabled={userValid === false}>
+          Submit
+        </button>
+      </div>
     </form>
   );
 }
