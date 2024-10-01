@@ -24,7 +24,7 @@ function RegisterPage() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const res = await fetch('/api/register', {
+            const res = await fetch('/api/auth/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -37,7 +37,7 @@ function RegisterPage() {
             }
 
             setSuccess(true);
-            setFormData({ userName: '', password: '', firstName: '', lastName: '', email: '' });
+            setFormData({ username: '', password: '', firstName: '', lastName: '', email: '' });
             setError(null);
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (err) {
