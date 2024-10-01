@@ -15,6 +15,8 @@ function GatedCommunity() {
                 <Link to="/profile" className="nav-link">Профиль</Link>
                 <Link to="/requests" className="nav-link">Requests</Link>
                 <Link to="/services" className="nav-link">Service</Link>
+                <Link to="/login" className="nav-link">Login</Link>
+                <Link to="/register" className="nav-link">Register</Link>
             </nav>
             <div className="content">
                 <Routes>
