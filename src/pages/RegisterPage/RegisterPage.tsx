@@ -37,7 +37,7 @@ function RegisterPage() {
             }
 
             setSuccess(true);
-            setFormData({ username: '', password: '', firstName: '', lastName: '', email: '' });
+            setFormData({ userName: '', password: '', firstName: '', lastName: '', email: '' });
             setError(null);
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (err) {
