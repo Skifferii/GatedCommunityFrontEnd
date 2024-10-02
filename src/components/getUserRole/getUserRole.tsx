@@ -1,17 +1,24 @@
-import jwtDecode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
+
 
 function getUserRole() {
-  const token = localStorage.getItem("token"); // Получаем токен из localStorage
+  const token = localStorage.getItem("accessToken");
 
   if (!token) {
-    return null; // Если токен отсутствует, возвращаем null
+    return null;
   }
 
-  // Декодируем токен, чтобы получить полезную нагрузку (payload)
-  const decodedToken = jwtDecode(token) as { role?: string; roles?: string[] };
+  // Расшифровываем токен
+  const decodedToken = jwtDecode(token) as { roles: { authority: string }[] };
 
-  // Предположим, что роль хранится в поле `role` или `roles`
-  const userRole = decodedToken.role || decodedToken.roles;
+  // Проверяем, есть ли роль "ROLE_ADMIN"
+  const hasAdminRole = decodedToken.roles.some(role => role.authority === "ROLE_ADMIN");
+
+  // Устанавливаем роль "Admin" или "User"
+  const userRole = hasAdminRole ? "admin" : "user";
+
+  // Сохраняем в localStorage
+  localStorage.setItem('userRoleLocal', userRole);
 
   return userRole;
 }

@@ -1,0 +1,12 @@
+.request-list {
+    background-color: #808080; /* Серый фон */
+    color: #d3d3d3; /* Светло-серый текст */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+  
+  .request-list h3 {
+    color: #d3d3d3; /* Заголовок также светло-серый */
+  }
+  
