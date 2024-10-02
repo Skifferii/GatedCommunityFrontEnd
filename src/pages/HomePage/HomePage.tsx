@@ -1,5 +1,4 @@
-import React from "react";
-import "./HomePage.css"; // Подключаем стили
+import "./HomePage.css";
 
 function HomePage() {
   return (
