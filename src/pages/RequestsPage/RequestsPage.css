@@ -1,45 +1,71 @@
 .requests-page {
-  background-color: #808080; /* Серый фон */
-  color: #d3d3d3; /* Светло-серый текст */
-  padding: 20px;
-  border-radius: 10px;
+  min-width: 320px;               
+  max-width: 960px;
+  min-height: 600px;
+  max-height: 1080px;               
+  margin: 50px auto;            
+  background-color: #505050;      
+  color: #f0f0f0;                 
+  padding: 30px;                  
+  border-radius: 12px;            
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); 
+  box-sizing: border-box;         
 }
 
 .button-group {
-  margin-bottom: 20px;
+  margin-bottom: 25px;          
+  display: flex;                  
+  justify-content: center;        
+  gap: 15px;                      
 }
 
 .toggle-button {
   background-color: #6c757d;
-  color: #d3d3d3;
-  padding: 10px;
+  color: #ffffff;                 
+  padding: 12px 20px;              
   border: none;
-  margin-right: 10px;
+  border-radius: 8px;             
   cursor: pointer;
+  transition: background-color 0.3s ease; 
+}
+
+.toggle-button:hover {
+  background-color: #5a6268;       
 }
 
 .toggle-button.active {
-  background-color: #5a6268;
+  background-color: #4e555b;       
 }
 
 .request-list select {
-  padding: 10px;
+  padding: 12px;                   
   width: 100%;
+  max-width: 400px;                
   border: 1px solid #d3d3d3;
-  border-radius: 5px;
-  background-color: #505050;
-  color: #d3d3d3;
+  border-radius: 8px;             
+  background-color: #606060;      
+  color: #f0f0f0;               
+  margin-bottom: 20px;             
+  box-sizing: border-box;
 }
 
 .request-details {
-  margin-top: 20px;
+  margin-top: 25px;
   background-color: #6c757d;
-  padding: 20px;
+  padding: 25px;                   
   border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;  
+}
+
+.request-details:hover {
+  background-color: #5a6268;       
 }
 
 .request-details img {
-  max-width: 100%;
+  max-width: 100%;                
   height: auto;
-  margin-top: 10px;
+  border-radius: 10px;            
+  margin-top: 15px;             
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
