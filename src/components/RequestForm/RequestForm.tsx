@@ -247,7 +247,7 @@ function RequestForm() {
           style={{ borderColor: userValid === false ? "red" : "" }}
         />
         {userValid === false && (
-          <span style={{ color: "red" }}>Пользователь не найден</span>
+          <span style={{ color: "red" }}>User not found</span>
         )}
       </div>
 
