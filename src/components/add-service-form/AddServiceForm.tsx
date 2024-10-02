@@ -9,12 +9,14 @@ function AddServiceForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newService = { title, description, image };
+    const token = localStorage.getItem("accessToken"); // Получаем токен
 
     try {
       await fetch("/api/offered-services", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`, // Добавляем токен в заголовок
         },
         body: JSON.stringify(newService),
       });
@@ -58,7 +60,9 @@ function AddServiceForm() {
 
 export default AddServiceForm;
 
+
 // import React, { useState } from "react";
+// import "./AddServiceForm.css";
 
 // function AddServiceForm() {
 //   const [title, setTitle] = useState("");
@@ -84,7 +88,7 @@ export default AddServiceForm;
 //   };
 
 //   return (
-//     <form onSubmit={handleSubmit}>
+//     <form className="add-service-form" onSubmit={handleSubmit}>
 //       <div>
 //         <label>Название:</label>
 //         <input
