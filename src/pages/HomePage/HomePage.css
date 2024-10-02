@@ -1,0 +1,24 @@
+.home-page {
+  background-color: #808080; /* Серый фон */
+  color: #d3d3d3; /* Светло-серый текст */
+  padding: 20px; /* Внутренний отступ */
+  border-radius: 10px; /* Закругление углов */
+  text-align: left; /* Выравнивание текста влево */
+}
+
+.home-page h1 {
+  margin-bottom: 20px; /* Отступ снизу для заголовка */
+}
+
+.home-page p {
+  margin: 5px 0; /* Отступ сверху и снизу */
+}
+
+.home-page .feature-list {
+  list-style-type: none; /* Убираем маркеры списка */
+  padding: 0; /* Убираем отступы */
+}
+
+.home-page .feature-list li {
+  margin-bottom: 10px; /* Отступ снизу для элементов списка */
+}

@@ -1,0 +1,12 @@
+.admin-button {
+  background-color: #6c757d;
+  color: #d3d3d3;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.admin-button:hover {
+  background-color: #5a6268;
+}
