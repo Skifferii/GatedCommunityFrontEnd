@@ -7,7 +7,7 @@ function OfferedServicesList() {
 
   async function fetchServices() {
     try {
-      const res = await fetch("/api/offered-services");
+      const res = await fetch("/api/offered-services", );
 
       if (!res.ok) {
         throw new Error("Ошибка при загрузке сервисов");
@@ -15,6 +15,7 @@ function OfferedServicesList() {
 
       const obj = await res.json();
       setServices(obj);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       setError("Не удалось загрузить сервисы");
     } finally {
