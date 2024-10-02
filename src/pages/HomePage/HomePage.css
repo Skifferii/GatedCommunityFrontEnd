@@ -1,13 +1,24 @@
 .home-page {
-    text-align: center;
-    margin-top: 50px;
+  background-color: #808080; /* Серый фон */
+  color: #d3d3d3; /* Светло-серый текст */
+  padding: 20px; /* Внутренний отступ */
+  border-radius: 10px; /* Закругление углов */
+  text-align: left; /* Выравнивание текста влево */
 }
 
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+.home-page h1 {
+  margin-bottom: 20px; /* Отступ снизу для заголовка */
 }
 
-p {
-    font-size: 1.2em;
+.home-page p {
+  margin: 5px 0; /* Отступ сверху и снизу */
+}
+
+.home-page .feature-list {
+  list-style-type: none; /* Убираем маркеры списка */
+  padding: 0; /* Убираем отступы */
+}
+
+.home-page .feature-list li {
+  margin-bottom: 10px; /* Отступ снизу для элементов списка */
 }

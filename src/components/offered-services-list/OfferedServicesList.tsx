@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function OfferedServicesList() {
   const [services, setServices] = useState([]);
@@ -7,15 +7,12 @@ function OfferedServicesList() {
 
   async function fetchServices() {
     try {
-      const res = await fetch("/api/offered-services", );
-
+      const res = await fetch("/api/offered-services");
       if (!res.ok) {
         throw new Error("Ошибка при загрузке сервисов");
       }
-
       const obj = await res.json();
       setServices(obj);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       setError("Не удалось загрузить сервисы");
     } finally {
@@ -36,21 +33,21 @@ function OfferedServicesList() {
   }
 
   return (
-    <div>
+    <div className="request-list"> {/* Обертка для стиля */}
       <ul>
-        {services.map(
-          (service: { title: string; id: number; description: string }) => (
-            <li key={service.id}>
-              {service.title} -- {service.description}
-            </li>
-          )
-        )}
+        {services.map((service: { title: string; id: number; description: string }) => (
+          <li key={service.id}>
+            {service.title} -- {service.description}
+          </li>
+        ))}
       </ul>
     </div>
   );
 }
 
 export default OfferedServicesList;
+
+
 // import { useEffect, useState } from "react";
 
 // function OfferedServicesList() {
@@ -60,7 +57,7 @@ export default OfferedServicesList;
 
 //   async function fetchServices() {
 //     try {
-//       const res = await fetch("/api/offered-services");
+//       const res = await fetch("/api/offered-services", );
 
 //       if (!res.ok) {
 //         throw new Error("Ошибка при загрузке сервисов");
@@ -68,7 +65,7 @@ export default OfferedServicesList;
 
 //       const obj = await res.json();
 //       setServices(obj);
-//       // eslint-disable-next-line @typescript-eslint/no-unused-vars
+//     // eslint-disable-next-line @typescript-eslint/no-unused-vars
 //     } catch (err) {
 //       setError("Не удалось загрузить сервисы");
 //     } finally {

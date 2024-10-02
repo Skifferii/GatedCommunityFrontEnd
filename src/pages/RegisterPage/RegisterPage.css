@@ -1,49 +1,51 @@
 .register-page {
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
+  max-width: 400px; /* Максимальная ширина формы */
+  margin: auto; /* Центрирование формы */
+  padding: 20px; /* Внутренний отступ */
+  border: 1px solid #d3d3d3; /* Светло-серая граница */
+  border-radius: 8px; /* Закругление углов */
+  background-color: #808080; /* Серый фон */
+  color: #d3d3d3; /* Светло-серый текст */
 }
 
 h2 {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: left; /* Выравнивание заголовка влево */
+  margin-bottom: 20px; /* Отступ снизу */
 }
 
 form {
-    display: flex;
-    flex-direction: column;
+  display: flex; /* Использование flexbox для верстки */
+  flex-direction: column; /* Вертикальное направление */
 }
 
 input {
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  margin-bottom: 15px; /* Отступ снизу для полей ввода */
+  padding: 10px; /* Внутренний отступ */
+  border: 1px solid #d3d3d3; /* Светло-серая граница */
+  border-radius: 4px; /* Закругление углов полей ввода */
+  background-color: #505050; /* Темный фон для полей ввода */
+  color: #d3d3d3; /* Светло-серый текст в полях ввода */
 }
 
 button {
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  padding: 10px; /* Внутренний отступ для кнопки */
+  background-color: #6c757d; /* Цвет кнопки */
+  color: white; /* Цвет текста кнопки */
+  border: none; /* Без границы */
+  border-radius: 4px; /* Закругление углов кнопки */
+  cursor: pointer; /* Курсор при наведении */
 }
 
 button:hover {
-    background-color: #45a049;
+  background-color: #5a6268; /* Цвет кнопки при наведении */
 }
 
 .error {
-    color: red;
-    text-align: center;
+  color: red; /* Цвет текста для ошибок */
+  text-align: left; /* Выравнивание текста влево */
 }
 
 .success {
-    color: green;
-    text-align: center;
+  color: green; /* Цвет текста для успешных сообщений */
+  text-align: left; /* Выравнивание текста влево */
 }

@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import getUserRole from "../../components/getUserRole/getUserRole";
+import "./ProfilePage.css";
 
 interface UserData {
   id: number;
