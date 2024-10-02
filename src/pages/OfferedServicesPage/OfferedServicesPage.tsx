@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import AddServiceForm from "../../components/add-service-form/AddServiceForm";
 import "./OfferedServicesPage.css";
+import AdminButton from "../../components/AdminButton/AdminButton";
+
+
 
 interface Service {
   id: string;
@@ -10,7 +13,7 @@ interface Service {
 }
 
 function OfferedServicesPage() {
-  const [services, setServices] = useState<Service[]>([]);
+    const [services, setServices] = useState<Service[]>([]);
   const [selectedService, setSelectedService] = useState<Service | null>(null);
   const [showComponent, setShowComponent] = useState<string | null>(null);
 
@@ -52,19 +55,16 @@ function OfferedServicesPage() {
     }
   };
 
+  
   return (
     <div className="services-page">
       <h2>Услуги</h2>
       <div className="button-group">
-        <button
-          className={`toggle-button ${
-            showComponent === "addService" ? "active" : ""
-          }`}
-          type="button"
+        {/* Кнопка только для админов */}
+        <AdminButton
+          buttonText="Добавить услугу"
           onClick={() => setShowComponent("addService")}
-        >
-          Добавить услугу
-        </button>
+        />               
         <button
           className={`toggle-button ${
             showComponent === "offeredList" ? "active" : ""
