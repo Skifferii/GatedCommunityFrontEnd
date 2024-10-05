@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 interface Request {
   id: string;
   propositionServiceId: string;
+  propositionServiceTitle: string;
 }
 
 interface RequestListProps {
@@ -33,7 +34,7 @@ const RequestList: React.FC<RequestListProps> = ({ onSelectRequest }) => {
         <option value="">Выберите запрос</option>
         {requests.map((request) => (
           <option key={request.id} value={request.id}>
-            {request.id} - {request.propositionServiceId}
+            {request.id} - {request.propositionServiceTitle}
           </option>
         ))}
       </select>
