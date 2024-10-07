@@ -1,18 +1,22 @@
-import React from 'react';
-import getUserRole from '../getUserRole/getUserRole';
+import getUserRole from "../getUserRole/getUserRole";
+import "./AdminButton.css";
 
+interface AdminButtonProps {
+  buttonText: string;
+  onClick: () => void;
+}
 
-function AdminButton() {
+function AdminButton({ buttonText, onClick }: AdminButtonProps) {
   const role = getUserRole();
 
+  if (role !== "admin") {
+    return null; // Не рендерим кнопку, если роль не "Admin"
+  }
+
   return (
-    <div>
-      {role === 'admin' && (
-        <button onClick={() => alert("Admin action")}>
-          Admin Only Button
-        </button>
-      )}
-    </div>
+    <button className="admin-button" onClick={onClick}>
+      {buttonText}
+    </button>
   );
 }
 
