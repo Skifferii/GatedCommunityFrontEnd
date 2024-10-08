@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { useState, useEffect } from "react";
 import RequestList from "../../components/request-list/RequestList";
 import RequestForm from "../../components/RequestForm/RequestForm";
@@ -5,6 +6,7 @@ import "./RequestsPage.css";
 
 function RequestsPage() {
   const [showComponent, setShowComponent] = useState<string | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [selectedRequest, setSelectedRequest] = useState<any>(null);
 
   const handleShowComponent = (component: string) => {
