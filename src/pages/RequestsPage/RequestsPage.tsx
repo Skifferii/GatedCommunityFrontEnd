@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import RequestList from "../../components/request-list/RequestList";
 import RequestForm from "../../components/RequestForm/RequestForm";
 import "./RequestsPage.css";

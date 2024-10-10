@@ -15,12 +15,8 @@ function ProfilePage() {
   const role = getUserRole();
   const [userData, setUserData] = useState<UserData | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [error, setError] = useState<string | null>(null);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [userName, setUserName] = useState<string | null>(
-    localStorage.getItem("userName")
-  ); // Получаем userName
+  const userName= localStorage.getItem("userName")
   const navigate = useNavigate(); // Для перенаправления пользователя
 
   // Функция для получения данных пользователя с отправкой токена
@@ -49,7 +45,7 @@ function ProfilePage() {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       setError("Не удалось загрузить данные пользователя.");
-      // Перенаправляем на страницу входа или регистрации
+      console.log (error);
       navigate("/login");
     } finally {
       setLoading(false);
@@ -107,3 +103,5 @@ function ProfilePage() {
 }
 
 export default ProfilePage;
+
+
