@@ -43,7 +43,6 @@ function GatedCommunity() {
                     <Route path="/register" element={<RegisterPage />} />
                 </Routes>
             </div>
-        </div>
     );
 }
 
