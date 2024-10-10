@@ -1,6 +1,5 @@
 import React from 'react';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { Route, Navigate } from 'react-router-dom';
+import {Navigate } from 'react-router-dom';
 
 interface AdminRouteProps {
   isAdmin: boolean;

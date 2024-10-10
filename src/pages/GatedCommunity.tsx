@@ -12,7 +12,7 @@ import getUserRole from '../components/getUserRole/getUserRole';
 
 
 function GatedCommunity() {
-    const isAdmin = getUserRole() === 'admin'; // Предположим, что роль хранится в localStorage
+    const isAdmin = getUserRole() === 'admin';
 
     return (
         <div className="gated-community">
