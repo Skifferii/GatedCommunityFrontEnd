@@ -1,45 +1,57 @@
 .requests-page {
-  background-color: #808080; /* Серый фон */
-  color: #d3d3d3; /* Светло-серый текст */
-  padding: 20px; /* Внутренний отступ */
-  border-radius: 10px; /* Закругление углов */
+  width: 100%; 
+  max-width: 400px; 
+  min-height: 500px;
+  max-height: 30vh;
+  margin: 20px auto;
+  border: 1px solid #d3d3d3; 
+  background-color: #808080; 
+  color: #d3d3d3; 
+  max-width: 600px; 
+  padding: 20px; 
+  border-radius: 10px; 
 }
 
 .button-group {
-  margin-bottom: 20px; /* Отступ снизу */
+  margin-bottom: 20px; 
+  display: flex; 
+  justify-content: space-around; 
 }
 
 .toggle-button {
-  background-color: #6c757d; /* Цвет кнопки */
-  color: #d3d3d3; /* Светло-серый текст кнопки */
-  padding: 10px; /* Внутренний отступ */
-  border: none; /* Без границы */
-  margin-right: 10px; /* Отступ справа */
-  cursor: pointer; /* Курсор при наведении */
+  background-color: #6c757d; 
+  color: #d3d3d3; 
+  padding: 10px; 
+  border: none; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  margin-right: 10px; 
+  min-width: 100px; 
+  max-width: 150px; 
+}
+
+.toggle-button:last-child {
+  margin-right: 0; /* Убираем отступ справа у последней кнопки */
 }
 
 .toggle-button.active {
-  background-color: #5a6268; /* Темнее при активном состоянии */
+  background-color: #5a6268; 
 }
 
-.request-list select {
-  padding: 10px; /* Внутренний отступ */
-  width: 100%; /* Ширина 100% */
-  border: 1px solid #d3d3d3; /* Светло-серая граница */
-  border-radius: 5px; /* Закругление углов */
-  background-color: #505050; /* Темный фон */
-  color: #d3d3d3; /* Светло-серый текст */
+.component-container {
+  margin-bottom: 20px; 
 }
 
 .request-details {
-  margin-top: 20px; /* Отступ сверху */
-  background-color: #6c757d; /* Цвет фона */
-  padding: 20px; /* Внутренний отступ */
-  border-radius: 10px; /* Закругление углов */
+  margin-top: 20px; 
+  background-color: #6c757d; 
+  padding: 20px; 
+  border-radius: 10px; 
 }
 
 .request-details img {
-  max-width: 100%; /* Максимальная ширина 100% */
-  height: auto; /* Авто высота */
-  margin-top: 10px; /* Отступ сверху */
+  max-width: 100%; 
+  height: auto; 
+  margin-top: 10px; 
+  border-radius: 5px; 
 }

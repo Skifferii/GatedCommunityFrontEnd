@@ -1,41 +1,69 @@
-.login-page {
-  max-width: 400px; /* Максимальная ширина формы */
-  margin: auto; /* Центрирование формы */
-  padding: 20px; /* Внутренний отступ */
-  border: 1px solid #d3d3d3; /* Светло-серая граница */
-  border-radius: 8px; /* Закругление углов */
-  background-color: #808080; /* Серый фон */
-  color: #d3d3d3; /* Светло-серый текст */
-}
-
-.login-page h2 {
-  text-align: left; /* Выравнивание заголовка влево */
-  margin-bottom: 20px; /* Отступ снизу */
-}
-
-.login-page form {
-  display: flex; /* Использование flexbox для верстки */
-  flex-direction: column; /* Вертикальное направление */
-}
-
-.login-page input {
-  margin-bottom: 15px; /* Отступ снизу для полей ввода */
-  padding: 10px; /* Внутренний отступ */
-  border: 1px solid #d3d3d3; /* Светло-серая граница */
-  border-radius: 4px; /* Закругление углов полей ввода */
-  background-color: #505050; /* Темный фон для полей ввода */
-  color: #d3d3d3; /* Светло-серый текст в полях ввода */
-}
-
-.login-page button {
-  padding: 10px; /* Внутренний отступ для кнопки */
-  background-color: #6c757d; /* Цвет кнопки */
-  color: white; /* Цвет текста кнопки */
-  border: none; /* Без границы */
-  border-radius: 4px; /* Закругление углов кнопки */
-  cursor: pointer; /* Курсор при наведении */
-}
-
-.login-page button:hover {
-  background-color: #5a6268; /* Цвет кнопки при наведении */
-}
+.login-container {
+    width: 100%; 
+    max-width: 400px; 
+    min-height: 500px;
+    max-height: 30vh;
+    margin: 20px auto; 
+    background-color: #808080; 
+    color: #d3d3d3; 
+    padding: 20px; 
+    border: 1px solid #d3d3d3; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+  }
+  
+  .login-container h2 {
+    margin-bottom: 20px; 
+    font-size: 24px; 
+    color: white; 
+  }
+  
+  .login-container label {
+    display: block; 
+    text-align: left; 
+    margin-bottom: 5px; 
+    font-size: 16px; 
+  }
+  
+  .login-container input {
+    width: 100%; 
+    padding: 10px; 
+    box-sizing: border-box;
+    margin-bottom: 15px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    background-color: #505050; 
+    color: #d3d3d3; 
+  }
+  
+  .login-container button {
+    width: 100%; 
+    padding: 10px; 
+    background-color: #4e9ee0; 
+    color: white;
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    transition: background-color 0.3s ease; 
+  
+  .login-container button:hover {
+    background-color: #3387cc; 
+  }
+  
+  .login-container p {
+    margin-top: 10px; 
+    color: white; 
+  }
+  
+  .login-container a {
+    color: #4e9ee0; 
+    text-decoration: underline; 
+    cursor: pointer; 
+  }
+  
+  .login-container a:hover {
+    color: #3387cc; 
+  }
+} 

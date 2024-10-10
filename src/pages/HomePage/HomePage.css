@@ -1,24 +1,32 @@
 .home-page {
-  background-color: #808080; /* Серый фон */
-  color: #d3d3d3; /* Светло-серый текст */
-  padding: 20px; /* Внутренний отступ */
-  border-radius: 10px; /* Закругление углов */
-  text-align: left; /* Выравнивание текста влево */
+  width: 100%; 
+  max-width: 400px; 
+  min-height: 500px;
+  max-height: 30vh;
+  margin: 20px auto;
+  background-color: #808080; 
+  color: #d3d3d3; 
+  padding: 20px;
+  border: 1px solid #d3d3d3; 
+  border-radius: 10px; 
+  text-align: center; 
+  
 }
 
 .home-page h1 {
-  margin-bottom: 20px; /* Отступ снизу для заголовка */
+  color: #d3d3d3;
+  margin-bottom: 20px; 
 }
 
 .home-page p {
-  margin: 5px 0; /* Отступ сверху и снизу */
+  margin: 5px 0; 
 }
 
 .home-page .feature-list {
-  list-style-type: none; /* Убираем маркеры списка */
-  padding: 0; /* Убираем отступы */
+  list-style-type: none; 
+  padding: 0; 
 }
 
 .home-page .feature-list li {
-  margin-bottom: 10px; /* Отступ снизу для элементов списка */
+  margin-bottom: 10px; 
 }

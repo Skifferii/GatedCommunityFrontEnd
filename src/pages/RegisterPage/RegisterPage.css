@@ -1,51 +1,71 @@
 .register-page {
-  max-width: 400px; /* Максимальная ширина формы */
-  margin: auto; /* Центрирование формы */
-  padding: 20px; /* Внутренний отступ */
-  border: 1px solid #d3d3d3; /* Светло-серая граница */
-  border-radius: 8px; /* Закругление углов */
-  background-color: #808080; /* Серый фон */
-  color: #d3d3d3; /* Светло-серый текст */
+  width: 100%;
+  max-width: 400px; 
+  min-height: 500px;
+  max-height: 30vh;
+  margin: 20px auto; 
+  padding: 20px; 
+  border: 1px solid #d3d3d3;
+  border-radius: 10px; 
+  background-color: #808080; 
+  color: #d3d3d3; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; 
 }
 
 h2 {
-  text-align: left; /* Выравнивание заголовка влево */
-  margin-bottom: 20px; /* Отступ снизу */
+  text-align: left; 
+  margin-bottom: 20px; 
+  font-size: 24px;
+  color: #d3d3d3;
+
 }
 
 form {
-  display: flex; /* Использование flexbox для верстки */
-  flex-direction: column; /* Вертикальное направление */
+  display: flex; 
+  flex-direction: column; 
+}
+
+.register-page label {
+  display: block; 
+  text-align: left; 
+  margin-bottom: 5px; 
+  font-size: 16px; 
 }
 
 input {
-  margin-bottom: 15px; /* Отступ снизу для полей ввода */
-  padding: 10px; /* Внутренний отступ */
-  border: 1px solid #d3d3d3; /* Светло-серая граница */
-  border-radius: 4px; /* Закругление углов полей ввода */
-  background-color: #505050; /* Темный фон для полей ввода */
-  color: #d3d3d3; /* Светло-серый текст в полях ввода */
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #d3d3d3; 
+  border-radius: 5px; 
+  background-color: #505050; 
+  color: #d3d3d3; 
 }
 
 button {
-  padding: 10px; /* Внутренний отступ для кнопки */
-  background-color: #6c757d; /* Цвет кнопки */
-  color: white; /* Цвет текста кнопки */
-  border: none; /* Без границы */
-  border-radius: 4px; /* Закругление углов кнопки */
-  cursor: pointer; /* Курсор при наведении */
+  width: 100%; 
+  padding: 10px; 
+  background-color: #4e9ee0; 
+  color: white;
+  border: none; 
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px; 
+  transition: background-color 0.3s ease; 
 }
 
 button:hover {
-  background-color: #5a6268; /* Цвет кнопки при наведении */
+  background-color: #3387cc; 
 }
 
 .error {
-  color: red; /* Цвет текста для ошибок */
-  text-align: left; /* Выравнивание текста влево */
+  color: #890000; 
+  text-align: left; 
 }
 
 .success {
-  color: green; /* Цвет текста для успешных сообщений */
-  text-align: left; /* Выравнивание текста влево */
+  color: #4e9ee0; 
+  text-align: left; 
 }
