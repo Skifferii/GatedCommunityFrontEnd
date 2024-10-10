@@ -19,9 +19,8 @@ function GatedCommunity() {
             <nav className="navigation">
                 <Link to="/" className="nav-link">Home</Link>
                 <Link to="/profile" className="nav-link">Профиль</Link>
-                <Link to="/requests" className="nav-link">Requests</Link>
-                                
-                {/* Показывать ссылку "Addresses" только если пользователь администратор */}
+                <Link to="/requests" className="nav-link">Requests</Link>                              
+                {/* Показывать ссылку "Addresses services" только если пользователь администратор */}
                 {isAdmin && <Link to="/Adreses" className="nav-link">Addresses</Link>} 
                 {isAdmin && <Link to="/services" className="nav-link">Service</Link>} 
             </nav>
@@ -43,6 +42,7 @@ function GatedCommunity() {
                     <Route path="/register" element={<RegisterPage />} />
                 </Routes>
             </div>
+        </div>
     );
 }
 
