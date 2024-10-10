@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 function OfferedServicesList() {
   const [services, setServices] = useState([]);
@@ -6,13 +6,19 @@ function OfferedServicesList() {
   const [error, setError] = useState<string | null>(null);
 
   async function fetchServices() {
+    const token = localStorage.getItem("accessToken"); // Получаем токен
     try {
-      const res = await fetch("/api/offered-services");
+      const res = await fetch("/api/offered-services", {
+        headers: {
+          Authorization: `Bearer ${token}`, // Добавляем токен в заголовок
+        },
+      });
       if (!res.ok) {
         throw new Error("Ошибка при загрузке сервисов");
       }
       const obj = await res.json();
       setServices(obj);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       setError("Не удалось загрузить сервисы");
     } finally {
@@ -33,7 +39,7 @@ function OfferedServicesList() {
   }
 
   return (
-    <div className="request-list"> {/* Обертка для стиля */}
+    <div className="request-list">
       <ul>
         {services.map((service: { title: string; id: number; description: string }) => (
           <li key={service.id}>
@@ -47,8 +53,7 @@ function OfferedServicesList() {
 
 export default OfferedServicesList;
 
-
-// import { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 
 // function OfferedServicesList() {
 //   const [services, setServices] = useState([]);
@@ -57,12 +62,10 @@ export default OfferedServicesList;
 
 //   async function fetchServices() {
 //     try {
-//       const res = await fetch("/api/offered-services", );
-
+//       const res = await fetch("/api/offered-services");
 //       if (!res.ok) {
 //         throw new Error("Ошибка при загрузке сервисов");
 //       }
-
 //       const obj = await res.json();
 //       setServices(obj);
 //     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -86,15 +89,13 @@ export default OfferedServicesList;
 //   }
 
 //   return (
-//     <div>
+//     <div className="request-list"> {/* Обертка для стиля */}
 //       <ul>
-//         {services.map(
-//           (service: { title: string; id: number; description: string }) => (
-//             <li key={service.id}>
-//               {service.title} -- {service.description}
-//             </li>
-//           )
-//         )}
+//         {services.map((service: { title: string; id: number; description: string }) => (
+//           <li key={service.id}>
+//             {service.title} -- {service.description}
+//           </li>
+//         ))}
 //       </ul>
 //     </div>
 //   );

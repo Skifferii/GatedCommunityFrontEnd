@@ -7,8 +7,7 @@ function getUserRole() {
   if (!token) {
     return null;
   }
-
-  // Расшифровываем токен
+   // Расшифровываем токен
   const decodedToken = jwtDecode(token) as { roles: { authority: string }[] };
 
   // Проверяем, есть ли роль "ROLE_ADMIN"
