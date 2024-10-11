@@ -56,6 +56,7 @@ function ProfilePage() {
     if (userName) {
       fetchUserData();
     } else {
+      console.log ("fetchUserData error");
       // Если имя пользователя отсутствует, перенаправляем на страницу входа или регистрации
       navigate("/login");
     }
