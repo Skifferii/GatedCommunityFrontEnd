@@ -14,6 +14,15 @@ interface Address {
   active: boolean;
 }
 
+interface Address {
+  id: number;
+  street: string;
+  numberHouse: string;
+  city: string;
+  index: number;
+  active: boolean;
+}
+
 interface UserData {
   id: number;
   firstName: string;
@@ -33,6 +42,7 @@ function ProfilePage() {
   const [showDeleteConfirm, setShowDeleteConfirm] = useState<number | null>(null);
   const userName = localStorage.getItem("userName");
   const navigate = useNavigate();
+
 
   useEffect(() => {
     async function fetchUserData() {
@@ -97,6 +107,7 @@ function ProfilePage() {
         console.log(err);
       }
     }
+
   };
 
   return (
@@ -136,6 +147,7 @@ function ProfilePage() {
               <button onClick={handleDeleteAddress}>Да</button>
             </div>
           )}
+
         </>
       ) : (
         <p>
