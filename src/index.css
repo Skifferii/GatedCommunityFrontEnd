@@ -3,10 +3,13 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  /* color-scheme: light dark; */
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  background-color: #5f5f5f;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../src/assets/A_gated_community_with_a_peaceful_suburban_environ.jpg);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -25,6 +28,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
+  justify-content: center;
   place-items: center;
   /*min-width: 320px;*/
   min-height: 100vh;
@@ -60,7 +64,6 @@ button:focus-visible {
     min-width: 600px;
     color: #4693db;
     background-color: rgb(250, 197, 240);
-    
   }
   a:hover {
     color: #925bc2;

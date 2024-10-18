@@ -2,6 +2,7 @@
     npm add @emotion/react
     npm install jwt-decode
     npm i @emotion/styled
+    npm run build
 
 -->
 
