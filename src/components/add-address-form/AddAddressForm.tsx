@@ -48,7 +48,7 @@ function AddAddressForm() {
 
       setSuccess(true);
       setError(null);
-      setNewAddress({ street: "", numberHouse: "", city: "", index: "" }); // Очистка формы после успешного добавления
+      setNewAddress({ street: "", numberHouse: "", city: "", index: "" }); 
     } catch (error) {
       setError("Ошибка при добавлении адреса. Попробуйте снова.");
       setSuccess(false);
@@ -94,9 +94,9 @@ function AddAddressForm() {
       <div>
         <label>Index:</label>
         <input
-          type="number"  // Используем number для числового ввода
+          type="number" 
           name="index"
-          placeholder="0000"
+          placeholder="00000"
           value={newAddress.index}
           onChange={handleChange}
           required
