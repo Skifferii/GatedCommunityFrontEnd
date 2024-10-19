@@ -21,9 +21,9 @@ function GatedCommunity() {
                 <Link to="/profile" className="nav-link">Профиль</Link>
                 <Link to="/requests" className="nav-link">Requests</Link>                              
                 {/* Показывать ссылку "Addresses services" только если пользователь администратор */}
+                {isAdmin && <Link to="/services" className="nav-link">Service</Link>}
                 {isAdmin && <Link to="/Adreses" className="nav-link">Addresses</Link>} 
-                {isAdmin && <Link to="/services" className="nav-link">Service</Link>} 
-            </nav>
+                             </nav>
             <div className="content">
                 <Routes>
                     <Route path="/" element={<HomePage />} />
