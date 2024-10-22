@@ -48,11 +48,7 @@ function AddAddressForm() {
 
       setSuccess(true);
       setError(null);
-<<<<<<< HEAD
       setNewAddress({ street: "", numberHouse: "", city: "", index: "" }); // Очистка формы после успешного добавления
-=======
-      setNewAddress({ street: "", numberHouse: "", city: "", index: "" }); 
->>>>>>> bde9e0f19d5e1dcb813335151f135ff3eead0262
     } catch (error) {
       setError("Ошибка при добавлении адреса. Попробуйте снова.");
       setSuccess(false);

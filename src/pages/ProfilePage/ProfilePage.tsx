@@ -39,6 +39,7 @@ function ProfilePage() {
         const res = await fetch(`/api/users/me`, {
           headers: { Authorization: `Bearer ${token}` },
         });
+        
         const data = await res.json();
         setUserData(data);
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
