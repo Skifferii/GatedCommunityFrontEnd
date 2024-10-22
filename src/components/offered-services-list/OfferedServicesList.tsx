@@ -53,6 +53,7 @@ function OfferedServicesList() {
 
 export default OfferedServicesList;
 
+<<<<<<< HEAD
 // import React, { useEffect, useState } from "react";
 
 // function OfferedServicesList() {
@@ -102,3 +103,5 @@ export default OfferedServicesList;
 // }
 
 // export default OfferedServicesList;
+=======
+>>>>>>> bde9e0f19d5e1dcb813335151f135ff3eead0262

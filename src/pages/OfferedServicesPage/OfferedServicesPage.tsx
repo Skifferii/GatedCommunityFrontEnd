@@ -1,7 +1,12 @@
 import { useState, useEffect } from "react";
+<<<<<<< HEAD
 import AddServiceForm from "../../components/add-address-form/AddAddressForm";
+=======
+
+>>>>>>> bde9e0f19d5e1dcb813335151f135ff3eead0262
 import "./OfferedServicesPage.css";
 import AdminButton from "../../components/AdminButton/AdminButton";
+import AddServiceForm from "../../components/add-service-form/AddServiceForm";
 
 interface Service {
   id: string;
