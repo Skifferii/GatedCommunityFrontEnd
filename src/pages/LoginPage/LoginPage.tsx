@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LoginPage.css";
 
@@ -44,6 +44,7 @@ const LoginPage: React.FC = () => {
           <label>Username:</label>
           <input
             type="text"
+            placeholder="Имя пользователя"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
@@ -53,6 +54,7 @@ const LoginPage: React.FC = () => {
           <label>Password:</label>
           <input
             type="password"
+            placeholder="Пароль"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
