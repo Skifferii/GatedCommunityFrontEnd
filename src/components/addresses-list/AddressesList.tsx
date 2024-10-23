@@ -8,15 +8,11 @@ interface Address {
   numberHouse: string;
 }
 
-<<<<<<< HEAD
-function AddressesList({ onSelect }: { onSelect: (id: number, address: Address) => void }) {
-=======
 function AddressesList({
   onSelect,
 }: {
   onSelect: (id: number, address: Address) => void;
 }) {
->>>>>>> bde9e0f19d5e1dcb813335151f135ff3eead0262
   const [addresses, setAddresses] = useState<Address[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -64,14 +60,6 @@ function AddressesList({
   };
 
   const handleStreetChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-<<<<<<< HEAD
-    setSelectedStreet(e.target.value);
-  };
-
-  const filteredCities = [...new Set(addresses.filter(addr => addr.index === selectedIndex).map(addr => addr.city))];
-  const filteredStreets = [...new Set(addresses.filter(addr => addr.index === selectedIndex && addr.city === selectedCity).map(addr => addr.street))];
-  const filteredHouses = addresses.filter(addr => addr.index === selectedIndex && addr.city === selectedCity && addr.street === selectedStreet);
-=======
     const newStreet = e.target.value;
     setSelectedStreet(newStreet);
 
@@ -111,16 +99,10 @@ function AddressesList({
       addr.city === selectedCity &&
       addr.street === selectedStreet
   );
->>>>>>> bde9e0f19d5e1dcb813335151f135ff3eead0262
 
   return (
     <div>
       <select onChange={handleIndexChange} value={selectedIndex || ""}>
-<<<<<<< HEAD
-        <option value="" disabled>Выберите индекс</option>
-        {[...new Set(addresses.map(addr => addr.index))].map((index) => (
-          <option key={index} value={index}>{index}</option>
-=======
         <option value="" disabled>
           Выберите индекс
         </option>
@@ -128,17 +110,11 @@ function AddressesList({
           <option key={index} value={index}>
             {index}
           </option>
->>>>>>> bde9e0f19d5e1dcb813335151f135ff3eead0262
         ))}
       </select>
 
       {selectedIndex && (
         <select onChange={handleCityChange} value={selectedCity || ""}>
-<<<<<<< HEAD
-          <option value="" disabled>Выберите город</option>
-          {filteredCities.map((city) => (
-            <option key={city} value={city}>{city}</option>
-=======
           <option value="" disabled>
             Выберите город
           </option>
@@ -146,18 +122,12 @@ function AddressesList({
             <option key={city} value={city}>
               {city}
             </option>
->>>>>>> bde9e0f19d5e1dcb813335151f135ff3eead0262
           ))}
         </select>
       )}
 
       {selectedCity && (
         <select onChange={handleStreetChange} value={selectedStreet || ""}>
-<<<<<<< HEAD
-          <option value="" disabled>Выберите улицу</option>
-          {filteredStreets.map((street) => (
-            <option key={street} value={street}>{street}</option>
-=======
           <option value="" disabled>
             Выберите улицу
           </option>
@@ -165,18 +135,11 @@ function AddressesList({
             <option key={street} value={street}>
               {street}
             </option>
->>>>>>> bde9e0f19d5e1dcb813335151f135ff3eead0262
           ))}
         </select>
       )}
 
       {selectedStreet && (
-<<<<<<< HEAD
-        <select onChange={(e) => onSelect(Number(e.target.value), filteredHouses.find(addr => addr.id === Number(e.target.value))!)}>
-          <option value="" disabled>Выберите дом</option>
-          {filteredHouses.map((house) => (
-            <option key={house.id} value={house.id}>{house.numberHouse}</option>
-=======
         <select
           onChange={(e) => {
             const selectedHouse = filteredHouses.find(
@@ -194,7 +157,6 @@ function AddressesList({
             <option key={house.id} value={house.id}>
               {house.numberHouse}
             </option>
->>>>>>> bde9e0f19d5e1dcb813335151f135ff3eead0262
           ))}
         </select>
       )}
@@ -203,8 +165,6 @@ function AddressesList({
 }
 
 export default AddressesList;
-<<<<<<< HEAD
-=======
 
 // import { useEffect, useState } from "react";
 
@@ -351,4 +311,3 @@ export default AddressesList;
 // }
 
 // export default AddressesList;
->>>>>>> bde9e0f19d5e1dcb813335151f135ff3eead0262
