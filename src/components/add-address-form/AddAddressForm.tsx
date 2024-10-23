@@ -94,15 +94,9 @@ function AddAddressForm() {
       <div>
         <label>Index:</label>
         <input
-<<<<<<< HEAD
-          type="number"  // Используем number для числового ввода
-          name="index"
-          placeholder="0000"
-=======
           type="number" 
           name="index"
           placeholder="00000"
->>>>>>> bde9e0f19d5e1dcb813335151f135ff3eead0262
           value={newAddress.index}
           onChange={handleChange}
           required
