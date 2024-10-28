@@ -37,11 +37,11 @@ function RequestForm() {
   const [selectedTitle, setSelectedTitle] = useState<string>("");
 
   async function fetchServices() {
-    const token = localStorage.getItem("accessToken"); // Получаем токен
+    const token = localStorage.getItem("accessToken");
     try {
       const res = await fetch("/api/offered-services", {
         headers: {
-          Authorization: `Bearer ${token}`, // Добавляем токен в заголовок
+          Authorization: `Bearer ${token}`,
         },
       });
       const data = await res.json();
@@ -55,11 +55,11 @@ function RequestForm() {
   }
 
   async function fetchAddresses() {
-    const token = localStorage.getItem("accessToken"); // Получаем токен
+    const token = localStorage.getItem("accessToken");
     try {
       const res = await fetch("/api/addresses", {
         headers: {
-          Authorization: `Bearer ${token}`, // Добавляем токен в заголовок
+          Authorization: `Bearer ${token}`, 
         },
       });
       const data = await res.json();
@@ -76,7 +76,7 @@ function RequestForm() {
     try {
       const token = localStorage.getItem("accessToken"); 
       if (!token || !userName) {
-        throw new Error("Токен или имя пользователя отсутствуют");
+        throw new Error("Token or username missing");
       }
       const res = await fetch(`/api/users/results?name=${userName}`, {
         method: "GET",
@@ -99,11 +99,11 @@ function RequestForm() {
 
 
   const validateUser = async (userId: string) => {
-    const token = localStorage.getItem("accessToken"); // Получаем токен
+    const token = localStorage.getItem("accessToken");
     try {
       const res = await fetch(`/api/users/${userId}`, {
         headers: {
-          Authorization: `Bearer ${token}`, // Добавляем токен в заголовок
+          Authorization: `Bearer ${token}`,
         },
       });
       if (res.ok) {
@@ -144,7 +144,7 @@ function RequestForm() {
     setSelectedTitle(title);
     setFormData({
       ...formData,
-      propositionServiceId: "", // Сбросить выбор услуги при изменении заголовка
+      propositionServiceId: "",// Reset service selection when title changes // Сбросить выбор услуги при изменении заголовка
     });
   };
 
@@ -171,13 +171,13 @@ function RequestForm() {
       });
 
       if (res.ok) {
-        alert("Запрос успешно создан!");
+        alert("Request successfully created!");
       } else {
-        alert("Ошибка при создании запроса.");
+        alert("Error creating request.");
       }
     } catch (err) {
-      console.error("Ошибка при отправке запроса:", err);
-      alert("Не удалось отправить запрос.");
+      console.error("Error creating request:", err);
+      alert("Failed to send request.");
     }
   };
 
@@ -276,7 +276,7 @@ function RequestForm() {
       <div className="form-group">
         <label>User Id: {userId}</label>                   
         {userValid === false && (
-          <p style={{ color: "red" }}>Неверный User ID.</p>
+          <p style={{ color: "red" }}>Invalid User ID.</p>
         )}
       </div>
 

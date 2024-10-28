@@ -7,16 +7,16 @@ function getUserRole() {
   if (!token) {
     return null;
   }
-   // Расшифровываем токен
+   // Decrypt the token// Расшифровываем токен
   const decodedToken = jwtDecode(token) as { roles: { authority: string }[] };
 
-  // Проверяем, есть ли роль "ROLE_ADMIN"
+ // Check if there is a role "ROLE_ADMIN" // Проверяем, есть ли роль "ROLE_ADMIN"
   const hasAdminRole = decodedToken.roles.some(role => role.authority === "ROLE_ADMIN");
 
-  // Устанавливаем роль "Admin" или "User"
+ // Set the role to "Admin" or "User"
   const userRole = hasAdminRole ? "admin" : "user";
 
-  // Сохраняем в localStorage
+ // Save in localStorage // Сохраняем в localStorage
   localStorage.setItem('userRoleLocal', userRole);
 
   return userRole;

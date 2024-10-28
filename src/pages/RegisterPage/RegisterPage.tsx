@@ -55,14 +55,14 @@ console.log("Test")
 
   return (
     <div className="register-page">
-      <h2>Регистрация</h2>
+      <h2>Registration</h2>
       {error && <p className="error">{error}</p>}
-      {success && <p className="success">Вы успешно зарегистрировались!</p>}
+      {success && <p className="success">You have registered successfully!</p>}
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="userName"
-          placeholder="Имя пользователя"
+          placeholder="Username"
           value={formData.userName}
           onChange={handleChange}
           required
@@ -70,7 +70,7 @@ console.log("Test")
         <input
           type="password"
           name="password"
-          placeholder="Пароль"
+          placeholder="password"
           value={formData.password}
           onChange={handleChange}
           required
@@ -78,7 +78,7 @@ console.log("Test")
         <input
           type="text"
           name="firstName"
-          placeholder="Имя"
+          placeholder="FirstName"
           value={formData.firstName}
           onChange={handleChange}
           required
@@ -86,7 +86,7 @@ console.log("Test")
         <input
           type="text"
           name="lastName"
-          placeholder="Фамилия"
+          placeholder="LastName"
           value={formData.lastName}
           onChange={handleChange}
           required
@@ -99,7 +99,7 @@ console.log("Test")
           onChange={handleChange}
           required
         />
-        <button type="submit">Зарегистрироваться</button>
+        <button type="submit">Register</button>
       </form>
     </div>
   );
