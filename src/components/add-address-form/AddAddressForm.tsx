@@ -26,8 +26,8 @@ function AddAddressForm() {
 
     // Дополнительная проверка, если нужно, чтобы индекс был целым числом в диапазоне
     const index = parseInt(newAddress.index);
-    if (isNaN(index) || index < 1000 || index > 9999999) {
-      setError("Индекс должен быть целым числом от 1000 до 9999999.");
+    if (isNaN(index) || index < 10000 || index > 99999) {
+      setError("The index must be an integer between 10000 and 99999.");
       setSuccess(false);
       return;
     }
@@ -43,16 +43,16 @@ function AddAddressForm() {
       });
 
       if (!response.ok) {
-        throw new Error("Ошибка сервера");
+        throw new Error("Server error");
       }
 
       setSuccess(true);
       setError(null);
       setNewAddress({ street: "", numberHouse: "", city: "", index: "" }); 
     } catch (error) {
-      setError("Ошибка при добавлении адреса. Попробуйте снова.");
+      setError("Error adding address. Try again.");
       setSuccess(false);
-      console.error("Ошибка при добавлении Address", error);
+      console.error("Error adding Address", error);
     }
   };
 
@@ -85,7 +85,7 @@ function AddAddressForm() {
         <input
           type="text"
           name="city"
-          placeholder="Lugank"
+          placeholder="Lugansk"
           value={newAddress.city}
           onChange={handleChange}
           required
@@ -96,21 +96,21 @@ function AddAddressForm() {
         <input
           type="number" 
           name="index"
-          placeholder="00000"
+          placeholder="12345"
           value={newAddress.index}
           onChange={handleChange}
           required
-          min={1000}    // Минимальное значение — 4 цифры
-          max={9999999} // Максимальное значение — 7 цифр
-          step="1"      // Шаг ввода — целые числа
+          min={10000}   
+          max={99999} 
+          step="1"    
         />
       </div>
 
-      {/* Отображение ошибок */}
+      {/* Display errors */}
       {error && <div className="error-message">{error}</div>}
 
-      {/* Сообщение об успехе */}
-      {success && <div className="success-message">Address успешно добавлена!</div>}
+      {/* Success message */}
+      {success && <div className="success-message">Address successfully added!</div>}
 
       <button type="submit">Add new address</button>
     </form>
