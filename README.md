@@ -2,6 +2,8 @@
     npm add @emotion/react
     npm install jwt-decode
     npm i @emotion/styled
+    npm run build
+    git revert -m 1 <SHA-коммита-слияния>
 
 -->
 
