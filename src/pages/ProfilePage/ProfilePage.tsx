@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"; 
 import { Link, useNavigate } from "react-router-dom";
 import "./ProfilePage.css";
+import AddressesList from "../../components/addresses-list/AddressesList";
 
 interface Address {
   id: number;
@@ -28,12 +29,11 @@ function ProfilePage() {
   const [selectedAddress, setSelectedAddress] = useState<Address | null>(null);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState<number | null>(null);
   const [showAddAddress, setShowAddAddress] = useState<boolean>(false);
-
   const userName = localStorage.getItem("userName");
   const navigate = useNavigate();
 
-  async function fetchUserData() {
-    try {
+  useEffect(() => {
+    async function fetchUserData() {
       const token = localStorage.getItem("accessToken");
       try {
         const res = await fetch(`/api/users/me`, {
@@ -47,27 +47,11 @@ function ProfilePage() {
         navigate("/login");
       } finally {
         setLoading(false);
-
       }
-
-      const obj: UserData = await res.json();
-      setUserData(obj);
-    } catch (err) {
-      setError("Не удалось загрузить данные пользователя.");
-      console.log(error);
-      navigate("/login");
-    } finally {
-      setLoading(false);
     }
-  }
 
-  useEffect(() => {
-    if (userName) {
-      fetchUserData();
-    } else {
-      navigate("/login");
-    }
-  }, [userName]);
+    if (userName) fetchUserData();
+  }, [userName, navigate]);
 
   
   if (loading) {
@@ -77,7 +61,6 @@ function ProfilePage() {
 
   if (error) {
     return <div>{error}</div>;
-
   }
 
   const handleLogout = () => {
@@ -124,12 +107,6 @@ function ProfilePage() {
       } catch (err) {
         console.log(err);
       }
-      const updatedData = await res.json();
-      setUserData((prevData) =>
-        prevData ? { ...prevData, addresses: prevData.addresses.map((addr) => (addr.id === id ? updatedData : addr)) } : null
-      );
-    } catch (error) {
-      console.log(error);
     }
   };
 
@@ -157,26 +134,18 @@ function ProfilePage() {
       } catch (err) {
         console.log(err);
       }
-      setUserData((prevData) =>
-        prevData ? { ...prevData, addresses: prevData.addresses.filter((addr) => addr.id !== id) } : null
-      );
-    } catch (error) {
-      console.log(error);
     }
   };
 
 
   return (
     <div className="profile-page">
-      <h2>Мой профиль</h2>
       {userData ? (
         <>
-
           <h2>Hello {userData.userName}</h2>
           <p></p>
           <p>Firstname: {userData.firstName}</p>
           <p>Lastname: {userData.lastName}</p>
-          <p>Username: {userData.userName}</p>
           <p>Email: {userData.email}</p>
           <button onClick={handleLogout}>Logout</button>
 
@@ -213,21 +182,16 @@ function ProfilePage() {
               <AddressesList onSelect={(_id, addr) => setSelectedAddress(addr)} />
               <button onClick={handleAddAddress}>Save new address</button>
               <button onClick={() => setShowAddAddress(false)}>Cancel</button>
-
             </div>
           )}
-
-          <button onClick={handleLogout}>Выйти из профиля</button>
         </>
       ) : (
         <p>
           Please, <Link to="/login">Log in</Link>.
         </p>
-
       )}
     </div>
   );
 }
 
 export default ProfilePage;
-
