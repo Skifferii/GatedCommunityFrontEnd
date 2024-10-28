@@ -1,3 +1,13 @@
+<!-- npm install react-router-dom 
+    npm add @emotion/react
+    npm install jwt-decode
+    npm i @emotion/styled
+    npm run build
+    git revert -m 1 <SHA-коммита-слияния>
+
+-->
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

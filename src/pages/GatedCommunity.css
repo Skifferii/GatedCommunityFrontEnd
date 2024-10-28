@@ -1,0 +1,63 @@
+
+
+html,body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  min-width: 600px;
+  max-width: 1920px;
+  
+}
+
+.gated-community {
+  width: 100vw;              /* Ширина контейнера на 100% от родительского элемента (html, body) */
+  min-width: 600px;         /* Минимальная ширина, как у body */
+  max-width: 1920px;
+  height: 100vh;
+  /* min-height: 100vh;        Минимальная высота 100% окна браузера */
+  display: flex;            /* Используем flexbox для управления вложенными элементами */
+  flex-direction: column;   /* Располагаем элементы вертикально */
+  /*width: 100vw;   Максимальная ширина */
+  margin: 0 auto;  /*Центрирование контейнера */
+   /* Внутренний отступ */
+  
+}
+
+.navigation {
+  width: 100%;
+  max-width: 1920px;  
+  min-width: 600px;
+  display: flex; 
+  justify-content: space-around; 
+  padding: 1rem; 
+  background-color: #333; 
+}
+
+.nav-link {
+  color: white; /* Цвет текста ссылок */
+  text-decoration: none; /* Без подчеркивания */
+  padding: 10px 20px; /* Внутренний отступ */
+  font-size: 18px; /* Размер шрифта */
+  transition: background-color 0.3s; /* Плавный переход при наведении */
+}
+
+.nav-link:hover {
+  background-color: #555; /* Цвет фона при наведении */
+}
+
+.content {
+  /* display: flex; */
+  width: 100%;
+  height: auto;
+  min-width: 600px;
+  padding: 2rem; /* Внутренний отступ */
+  /* background-color: #5f5f5f; Цвет фона контента */
+  min-height: 80vh; /* Минимальная высота */
+  flex-grow: 1;
+  /* box-sizing: border-box; */
+  
+  
+}

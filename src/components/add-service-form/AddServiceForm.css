@@ -1,0 +1,53 @@
+.add-service-form {
+  background-color: #808080; /* Серый фон */
+  color: #d3d3d3; /* Светло-серый текст */
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.add-service-form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #d3d3d3;
+}
+
+.add-service-form input,
+.add-service-form textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  background-color: #505050;
+  color: #d3d3d3;
+}
+
+.add-service-form button {
+  background-color: #6c757d;
+  color: #d3d3d3;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-service-form button:hover {
+  background-color: #5a6268;
+}
+
+.admin-button {
+  background-color: #6c757d;
+  color: #d3d3d3;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.admin-button:hover {
+  background-color: #5a6268;
+}

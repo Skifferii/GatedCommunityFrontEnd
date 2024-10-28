@@ -1,0 +1,60 @@
+.requests-page {
+  width: 100%; 
+  max-width: 400px; 
+  min-height: 500px;
+  height: 30vh auto; 
+  max-height: auto;
+  margin: 20px auto;
+  /* border: 1px solid #d3d3d3;  */
+  background-color: #808080; 
+  color: #d3d3d3; 
+  padding: 20px; 
+  border-radius: 10px;
+  position: relative;
+  /* box-sizing: border-box; */
+  
+
+}
+
+.button-group {
+  /* margin-bottom: 20px;  */
+  justify-content: space-evenly; 
+}
+
+.toggle-button {
+  background-color: #6c757d; 
+  color: #d3d3d3; 
+  padding: 10px; 
+  border: none; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  margin-right: 10px; 
+  min-width: 100px; 
+  max-width: 150px; 
+}
+
+.toggle-button:last-child {
+  margin-right: 0; /* Убираем отступ справа у последней кнопки */
+}
+
+.toggle-button.active {
+  background-color: #5a6268; 
+}
+
+.component-container {
+  margin-bottom: 20px; 
+}
+
+.request-details {
+  margin-top: 20px; 
+  background-color: #6c757d; 
+  padding: 20px; 
+  border-radius: 10px; 
+}
+
+.request-details img {
+  max-width: 100%; 
+  height: auto; 
+  margin-top: 10px; 
+  border-radius: 5px; 
+}
