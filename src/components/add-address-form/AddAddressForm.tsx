@@ -23,6 +23,7 @@ function AddAddressForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const token = localStorage.getItem("accessToken");
+
     // Дополнительная проверка, если нужно, чтобы индекс был целым числом в диапазоне
     const index = parseInt(newAddress.index);
     if (isNaN(index) || index < 1000 || index > 9999999) {
