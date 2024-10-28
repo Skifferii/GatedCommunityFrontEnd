@@ -142,7 +142,8 @@ function ProfilePage() {
     <div className="profile-page">
       {userData ? (
         <>
-          <h2>Мой профиль</h2>
+          <h2>Hello {userData.userName}</h2>
+          <p></p>
           <p>Firstname: {userData.firstName}</p>
           <p>Lastname: {userData.lastName}</p>
           <p>Email: {userData.email}</p>
