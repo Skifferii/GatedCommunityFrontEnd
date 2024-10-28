@@ -55,7 +55,7 @@ function ProfilePage() {
 
   
   if (loading) {
-    return <div>Загрузка profil Data.</div>;
+    return <div>Loading profile data.</div>;
     
   }
 
@@ -155,8 +155,8 @@ function ProfilePage() {
               {editAddressId === address.id ? (
                 <div>
                   <AddressesList onSelect={(_id, addr) => setSelectedAddress(addr)} />
-                  <button onClick={() => setEditAddressId(null)}>Отмена</button>
-                  <button onClick={handleUpdateAddress}>Сохранить</button>
+                  <button onClick={() => setEditAddressId(null)}>Cancel</button>
+                  <button onClick={handleUpdateAddress}>Save</button>
                 </div>
               ) : (
                 <div>
