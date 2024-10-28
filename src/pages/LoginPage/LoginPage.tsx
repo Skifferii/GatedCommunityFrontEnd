@@ -24,12 +24,12 @@ const LoginPage: React.FC = () => {
       }
 
       const data = await res.json();
-      localStorage.setItem("accessToken", data.accessToken); // Сохраняем accessToken в localStorage
-      localStorage.setItem("refreshToken", data.refreshToken); // Можно сохранить и refreshToken для обновления токена
-      localStorage.setItem("userName", username); // Сохраняем userName в localStorage
+      localStorage.setItem("accessToken", data.accessToken);
+      localStorage.setItem("refreshToken", data.refreshToken);
+      localStorage.setItem("userName", username);
 
-      navigate("/profile"); // Перенаправляем пользователя на страницу profile
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      navigate("/profile");
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       setError("Invalid login credentials");
     }

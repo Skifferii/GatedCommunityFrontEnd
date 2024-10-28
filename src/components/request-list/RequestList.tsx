@@ -15,17 +15,17 @@ const RequestList: React.FC<RequestListProps> = ({ onSelectRequest }) => {
 
   useEffect(() => {
     const fetchRequests = async () => {
-      const token = localStorage.getItem("accessToken"); // Получаем токен
+      const token = localStorage.getItem("accessToken"); 
       try {
         const response = await fetch("/api/user-request", {
           headers: {
-            Authorization: `Bearer ${token}`, // Добавляем токен в заголовок
+            Authorization: `Bearer ${token}`,
           },
         });
         const data = await response.json();
         setRequests(data);
       } catch (error) {
-        console.error("Ошибка при получении списка запросов", error);
+        console.error("Error getting list of requests", error);
       }
     };
 
@@ -34,9 +34,9 @@ const RequestList: React.FC<RequestListProps> = ({ onSelectRequest }) => {
 
   return (
     <div className="request-list">
-      <h3>Список запросов</h3>
+      <h3>List of requests</h3>
       <select onChange={(e) => onSelectRequest(e.target.value)}>
-        <option value="">Выберите запрос</option>
+        <option value="">Select requests</option>
         {requests.map((request) => (
           <option key={request.id} value={request.id}>
             {request.id} - {request.propositionServiceTitle}
