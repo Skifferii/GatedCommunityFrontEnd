@@ -55,14 +55,21 @@ function ProfilePage() {
 
   
   if (loading) {
-    return <div>Загрузка сервисов...</div>;
+    return <div>Загрузка profil Data.</div>;
+    
   }
 
   if (error) {
     return <div>{error}</div>;
   }
 
-  
+  const handleLogout = () => {
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("userName");
+    setUserData(null);
+    navigate("/login");
+  };
+
   const handleDeleteAddress = async () => {
     if (showDeleteConfirm) {
       try {
@@ -139,6 +146,7 @@ function ProfilePage() {
           <p>Firstname: {userData.firstName}</p>
           <p>Lastname: {userData.lastName}</p>
           <p>Email: {userData.email}</p>
+          <button onClick={handleLogout}>Выйти из профиля</button>
 
           <h3>Адреса</h3>
           {userData.addresses.map((address) => (
