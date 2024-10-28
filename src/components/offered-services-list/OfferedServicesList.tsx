@@ -6,11 +6,11 @@ function OfferedServicesList() {
   const [error, setError] = useState<string | null>(null);
 
   async function fetchServices() {
-    const token = localStorage.getItem("accessToken"); // Получаем токен
+    const token = localStorage.getItem("accessToken");
     try {
       const res = await fetch("/api/offered-services", {
         headers: {
-          Authorization: `Bearer ${token}`, // Добавляем токен в заголовок
+          Authorization: `Bearer ${token}`,
         },
       });
       if (!res.ok) {
@@ -52,4 +52,3 @@ function OfferedServicesList() {
 }
 
 export default OfferedServicesList;
-
