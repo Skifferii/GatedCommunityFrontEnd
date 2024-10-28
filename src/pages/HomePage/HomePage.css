@@ -4,8 +4,8 @@
   min-height: 500px;
   max-height: 30vh;
   margin: 20px auto;
-  background-color: #808080; 
-  color: #d3d3d3; 
+  background-color: #808080c0; 
+  color: #ffffff; 
   padding: 20px;
   /* border: 1px solid #d3d3d3;  */
   border-radius: 10px; 
@@ -14,7 +14,7 @@
 }
 
 .home-page h1 {
-  color: #d3d3d3;
+  color: #ffffff;
   margin-bottom: 20px; 
 }
 
