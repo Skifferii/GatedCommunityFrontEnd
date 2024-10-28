@@ -7,7 +7,7 @@ import LoginPage from './LoginPage/LoginPage';
 import RegisterPage from './RegisterPage/RegisterPage';
 import AddressesPage from './AddressesPage/AddressesPage';
 import AdminRoute from '../components/AdminRoute/AdminRoute';
-import './GatedCommunity.css'; // Подключаем стили
+import './GatedCommunity.css';
 import getUserRole from '../components/getUserRole/getUserRole';
 
 
@@ -18,9 +18,8 @@ function GatedCommunity() {
         <div className="gated-community">
             <nav className="navigation">
                 <Link to="/" className="nav-link">Home</Link>
-                <Link to="/profile" className="nav-link">Профиль</Link>
-                <Link to="/requests" className="nav-link">Requests</Link>                              
-                {/* Показывать ссылку "Addresses services" только если пользователь администратор */}
+                <Link to="/profile" className="nav-link">Profile</Link>
+                <Link to="/requests" className="nav-link">Requests</Link>      
                 {isAdmin && <Link to="/services" className="nav-link">Service</Link>}
                 {isAdmin && <Link to="/Adreses" className="nav-link">Addresses</Link>} 
                              </nav>
