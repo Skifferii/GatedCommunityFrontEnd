@@ -4,8 +4,8 @@ function HomePage() {
   return (
     
     <div className="home-page">
-      <h1>Welcome to gated community</h1>
-      <p>Здесь вы можете зарегистрироваться или войти в свой профиль.</p>
+      <h1>Welcome to GatedCommunity</h1>
+      <p>We could have been the first community with blackjack and h**kers.</p>
     </div>
   );
 }

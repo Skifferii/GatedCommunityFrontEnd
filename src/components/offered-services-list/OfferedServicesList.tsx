@@ -6,21 +6,21 @@ function OfferedServicesList() {
   const [error, setError] = useState<string | null>(null);
 
   async function fetchServices() {
-    const token = localStorage.getItem("accessToken"); // Получаем токен
+    const token = localStorage.getItem("accessToken");
     try {
       const res = await fetch("/api/offered-services", {
         headers: {
-          Authorization: `Bearer ${token}`, // Добавляем токен в заголовок
+          Authorization: `Bearer ${token}`,
         },
       });
       if (!res.ok) {
-        throw new Error("Ошибка при загрузке сервисов");
+        throw new Error("Error loading services");
       }
       const obj = await res.json();
       setServices(obj);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
-      setError("Не удалось загрузить сервисы");
+      setError("Failed to load services");
     } finally {
       setLoading(false);
     }
@@ -31,7 +31,7 @@ function OfferedServicesList() {
   }, []);
 
   if (loading) {
-    return <div>Загрузка сервисов...</div>;
+    return <div>Loading services...</div>;
   }
 
   if (error) {

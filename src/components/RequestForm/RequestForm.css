@@ -1,18 +1,9 @@
 .request-form {
-  width: 100%; 
-  /* max-width: 400px; 
-  min-height: 500px; */
-
-  /* border: 1px solid #d3d3d3;  */
   background-color: #808080; /* Серый фон */
   color: #d3d3d3; /* Светло-серый текст */
-  padding: 0;
+  padding: 20px;
   border-radius: 10px;
-  
-  margin: 20px auto;
-  position: absolute;
-  left: 0;
-  
+  margin: 20px 0;
 }
 
 .form-group {

@@ -10,7 +10,7 @@ function AdminButton({ buttonText, onClick }: AdminButtonProps) {
   const role = getUserRole();
 
   if (role !== "admin") {
-    return null; // Не рендерим кнопку, если роль не "Admin"
+    return null; 
   }
 
   return (

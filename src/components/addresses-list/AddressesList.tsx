@@ -30,13 +30,13 @@ function AddressesList({
           },
         });
         if (!res.ok) {
-          throw new Error("Ошибка при загрузке адресов");
+          throw new Error("Error loading addresses");
         }
         const data = await res.json();
         setAddresses(data);
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch (err) {
-        setError("Не удалось загрузить адреса");
+        setError("Failed to load addresses");
       } finally {
         setLoading(false);
       }
@@ -45,33 +45,33 @@ function AddressesList({
     fetchAddresses();
   }, []);
 
-  if (loading) return <div>Загрузка адресов...</div>;
+  if (loading) return <div>Loading addresses...</div>;
   if (error) return <div>{error}</div>;
 
   const handleIndexChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedIndex(Number(e.target.value));
-    setSelectedCity(null); // Сбросить другие выпадающие списки
+    setSelectedCity(null); // Reset other dropdownsv Сбросить другие выпадающие списки
     setSelectedStreet(null);
   };
 
   const handleCityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedCity(e.target.value);
-    setSelectedStreet(null); // Сбросить последующие списки
+    setSelectedStreet(null); // Reset subsequent lists Сбросить последующие списки
   };
 
   const handleStreetChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newStreet = e.target.value;
     setSelectedStreet(newStreet);
 
-    // Фильтруем дома для автоматического выбора, если один адрес
-    const filteredHouses = addresses.filter(
+    // Filter houses for automatic selection if there is one address // Фильтруем дома для автоматического выбора, если один адрес
+       const filteredHouses = addresses.filter(
       (addr) =>
         addr.index === selectedIndex &&
         addr.city === selectedCity &&
         addr.street === newStreet
     );
 
-    // Если только один дом, выбираем его автоматически
+    // If there is only one house, select it automatically // Если только один дом, выбираем его автоматически
     if (filteredHouses.length === 1) {
       onSelect(filteredHouses[0].id, filteredHouses[0]);
     }
@@ -104,7 +104,7 @@ function AddressesList({
     <div>
       <select onChange={handleIndexChange} value={selectedIndex || ""}>
         <option value="" disabled>
-          Выберите индекс
+        Select index
         </option>
         {[...new Set(addresses.map((addr) => addr.index))].map((index) => (
           <option key={index} value={index}>
@@ -116,7 +116,7 @@ function AddressesList({
       {selectedIndex && (
         <select onChange={handleCityChange} value={selectedCity || ""}>
           <option value="" disabled>
-            Выберите город
+          Select city
           </option>
           {filteredCities.map((city) => (
             <option key={city} value={city}>
@@ -129,7 +129,7 @@ function AddressesList({
       {selectedCity && (
         <select onChange={handleStreetChange} value={selectedStreet || ""}>
           <option value="" disabled>
-            Выберите улицу
+          Select street
           </option>
           {filteredStreets.map((street) => (
             <option key={street} value={street}>
@@ -151,7 +151,7 @@ function AddressesList({
           }}
         >
           <option value="" disabled>
-            Выберите дом
+          Choose a house
           </option>
           {filteredHouses.map((house) => (
             <option key={house.id} value={house.id}>

@@ -23,7 +23,7 @@ interface UserData {
 
 function ProfilePage() {
   const [userData, setUserData] = useState<UserData | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+  // const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [editAddressId, setEditAddressId] = useState<number | null>(null);
   const [selectedAddress, setSelectedAddress] = useState<Address | null>(null);
@@ -43,10 +43,10 @@ function ProfilePage() {
         setUserData(data);
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch (err) {
-        setError("Не удалось загрузить данные пользователя.");
+        setError("Failed to load user data.");
         navigate("/login");
       } finally {
-        setLoading(false);
+        // setLoading(false);
       }
     }
 
@@ -54,10 +54,10 @@ function ProfilePage() {
   }, [userName, navigate]);
 
   
-  if (loading) {
-    return <div>Загрузка profil Data.</div>;
+  // if (loading) {
+  //   return <div>Loading profile data.</div>;
     
-  }
+  // }
 
   if (error) {
     return <div>{error}</div>;
@@ -147,22 +147,22 @@ function ProfilePage() {
           <p>Firstname: {userData.firstName}</p>
           <p>Lastname: {userData.lastName}</p>
           <p>Email: {userData.email}</p>
-          <button onClick={handleLogout}>Выйти из профиля</button>
+          <button onClick={handleLogout}>Logout</button>
 
-          <h3>Адреса</h3>
+          <h3>Addresses</h3>
           {userData.addresses.map((address) => (
             <div key={address.id}>
               {editAddressId === address.id ? (
                 <div>
                   <AddressesList onSelect={(_id, addr) => setSelectedAddress(addr)} />
-                  <button onClick={() => setEditAddressId(null)}>Отмена</button>
-                  <button onClick={handleUpdateAddress}>Сохранить</button>
+                  <button onClick={() => setEditAddressId(null)}>Cancel</button>
+                  <button onClick={handleUpdateAddress}>Save</button>
                 </div>
               ) : (
                 <div>
                   <p>{address.street}, {address.numberHouse}, {address.city}, {address.index}</p>
-                  <button onClick={() => setEditAddressId(address.id)}>Изменить</button>
-                  <button onClick={() => setShowDeleteConfirm(address.id)}>Удалить</button>
+                  <button onClick={() => setEditAddressId(address.id)}>Edit</button>
+                  <button onClick={() => setShowDeleteConfirm(address.id)}>Delete</button>
                 </div>
               )}
             </div>
@@ -170,24 +170,24 @@ function ProfilePage() {
 
           {showDeleteConfirm && (
             <div>
-              <p>Точно удалить?</p>
-              <button onClick={() => setShowDeleteConfirm(null)}>Нет</button>
-              <button onClick={handleDeleteAddress}>Да</button>
+              <p>Are you sure you want to delete it?</p>
+              <button onClick={() => setShowDeleteConfirm(null)}>NO</button>
+              <button onClick={handleDeleteAddress}>YES</button>
             </div>
           )}
 
-          <button onClick={() => setShowAddAddress(true)}>Добавить адрес</button>
+          <button onClick={() => setShowAddAddress(true)}>Add address</button>
           {showAddAddress && (
             <div>
               <AddressesList onSelect={(_id, addr) => setSelectedAddress(addr)} />
-              <button onClick={handleAddAddress}>Сохранить новый адрес</button>
-              <button onClick={() => setShowAddAddress(false)}>Отмена</button>
+              <button onClick={handleAddAddress}>Save new address</button>
+              <button onClick={() => setShowAddAddress(false)}>Cancel</button>
             </div>
           )}
         </>
       ) : (
         <p>
-          Пожалуйста, <Link to="/login">войдите</Link>.
+          Please, <Link to="/login">Log in</Link>.
         </p>
       )}
     </div>

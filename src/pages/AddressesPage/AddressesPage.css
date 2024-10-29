@@ -1,13 +1,13 @@
 .addresses-page {
   width: 100%; 
   max-width: 400px; 
-  min-height: 500px;
+  min-height: 550px;
   max-height: 30vh;
   margin: 20px auto;
   padding: 20px; 
   /* border: 1px solid #d3d3d3;  */
   border-radius: 8px; 
-  background-color: #808080; 
+  background-color: #808080c0; 
   color: #d3d3d3; 
 }
 
