@@ -14,11 +14,11 @@ function RequestsPage() {
   };
 
   const handleRequestSelect = async (requestId: string) => {
-    const token = localStorage.getItem("accessToken"); // Получаем токен
+    const token = localStorage.getItem("accessToken"); 
     try {
       const requestResponse = await fetch(`/api/user-request/${requestId}`, {
         headers: {
-          Authorization: `Bearer ${token}`, // Добавляем токен в заголовок
+          Authorization: `Bearer ${token}`,
         },
       });
       const requestData = await requestResponse.json();
@@ -27,7 +27,7 @@ function RequestsPage() {
         `/api/offered-services/${requestData.propositionServiceId}`,
         {
           headers: {
-            Authorization: `Bearer ${token}`, // Добавляем токен в заголовок
+            Authorization: `Bearer ${token}`,
           },
         }
       );
@@ -35,7 +35,7 @@ function RequestsPage() {
 
       const userResponse = await fetch(`/api/users/${requestData.userId}`, {
         headers: {
-          Authorization: `Bearer ${token}`, // Добавляем токен в заголовок
+          Authorization: `Bearer ${token}`,
         },
       });
       const userData = await userResponse.json();
@@ -44,7 +44,7 @@ function RequestsPage() {
         `/api/addresses/${requestData.addressId}`,
         {
           headers: {
-            Authorization: `Bearer ${token}`, // Добавляем токен в заголовок
+            Authorization: `Bearer ${token}`,
           },
         }
       );
@@ -59,7 +59,7 @@ function RequestsPage() {
         address: `${addressData.street} ${addressData.numberHouse}, ${addressData.city}, ${addressData.index}`,
       });
     } catch (error) {
-      console.error("Ошибка при получении деталей запроса:", error);
+      console.error("Error retrieving request details:", error);
     }
   };
 

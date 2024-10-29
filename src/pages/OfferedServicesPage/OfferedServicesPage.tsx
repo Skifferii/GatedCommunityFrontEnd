@@ -22,45 +22,42 @@ function OfferedServicesPage() {
     }
   }, [showComponent]);
 
-  // Функция для получения списка услуг
   const fetchServices = async () => {
-    const token = localStorage.getItem("accessToken"); // Получаем токен
+    const token = localStorage.getItem("accessToken");
     try {
       const response = await fetch("/api/offered-services", {
         headers: {
-          Authorization: `Bearer ${token}`, // Добавляем токен в заголовок
+          Authorization: `Bearer ${token}`, 
         },
       });
       const data = await response.json();
       setServices(data);
     } catch (error) {
-      console.error("Ошибка при получении списка услуг", error);
+      console.error("Error while getting list of services", error);
     }
   };
 
-  // Функция для получения деталей услуги
-  const fetchServiceDetails = async (serviceId: string) => {
-    const token = localStorage.getItem("accessToken"); // Получаем токен
+   const fetchServiceDetails = async (serviceId: string) => {
+    const token = localStorage.getItem("accessToken");
     try {
       const response = await fetch(`/api/offered-services/${serviceId}`, {
         headers: {
-          Authorization: `Bearer ${token}`, // Добавляем токен в заголовок
+          Authorization: `Bearer ${token}`,
         },
       });
       const data = await response.json();
       setSelectedService(data);
     } catch (error) {
-      console.error("Ошибка при получении деталей услуги", error);
+      console.error("Error while receiving details", error);
     }
   };
 
   return (
     <div className="services-page">
-      <h2>Услуги</h2>
-      <div className="button-group">
-        {/* Кнопка только для админов */}
+      <h2>Services</h2>
+      <div className="button-group">        
         <AdminButton
-          buttonText="Добавить услугу"
+          buttonText="Add service"
           onClick={() => setShowComponent("addService")}
         />
         <button
@@ -70,22 +67,20 @@ function OfferedServicesPage() {
           type="button"
           onClick={() => setShowComponent("offeredList")}
         >
-          Список услуг
+          Services list
         </button>
       </div>
 
-      {/* Компонент добавления услуги */}
       {showComponent === "addService" && (
         <div className="component-container">
           <AddServiceForm />
         </div>
       )}
-
-      {/* Компонент списка услуг */}
+     
       {showComponent === "offeredList" && (
         <div className="services-list">
           <select onChange={(e) => fetchServiceDetails(e.target.value)}>
-            <option value="">Выберите услугу</option>
+            <option value="">Choose service</option>
             {services.map((service) => (
               <option key={service.id} value={service.id}>
                 {service.id} - {service.title}
@@ -93,11 +88,10 @@ function OfferedServicesPage() {
             ))}
           </select>
 
-          {/* Отображение деталей выбранной услуги */}
           {selectedService && (
             <div className="service-details">
               <h3>Service details</h3>
-              <p>Описание: {selectedService.description}</p>
+              <p>Description: {selectedService.description}</p>
               {selectedService.image && (
                 <img src={selectedService.image} alt="Изображение услуги" />
               )}
