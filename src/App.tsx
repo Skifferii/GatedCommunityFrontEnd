@@ -1,16 +1,12 @@
-
-
-import './App.css'
-import OfferedServicesList from './components/offered-services-list/OfferedServicesList'
+import {HashRouter } from 'react-router-dom';
+import GatedCommunity from './pages/GatedCommunity';
 
 function App() {
-
-
   return (
-    <>
-      <OfferedServicesList/>
-    </>
-  )
+    <HashRouter>
+      <GatedCommunity />
+    </HashRouter>
+  );
 }
 
-export default App
+export default App;
