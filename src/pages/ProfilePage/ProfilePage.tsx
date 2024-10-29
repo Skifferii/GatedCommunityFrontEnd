@@ -23,7 +23,7 @@ interface UserData {
 
 function ProfilePage() {
   const [userData, setUserData] = useState<UserData | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+  // const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [editAddressId, setEditAddressId] = useState<number | null>(null);
   const [selectedAddress, setSelectedAddress] = useState<Address | null>(null);
@@ -46,7 +46,7 @@ function ProfilePage() {
         setError("Failed to load user data.");
         navigate("/login");
       } finally {
-        setLoading(false);
+        // setLoading(false);
       }
     }
 
@@ -54,10 +54,10 @@ function ProfilePage() {
   }, [userName, navigate]);
 
   
-  if (loading) {
-    return <div>Loading profile data.</div>;
+  // if (loading) {
+  //   return <div>Loading profile data.</div>;
     
-  }
+  // }
 
   if (error) {
     return <div>{error}</div>;

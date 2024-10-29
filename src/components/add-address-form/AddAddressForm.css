@@ -3,9 +3,7 @@
   color: #d3d3d3; /* Светло-серый текст */
   padding: 20px;
   border-radius: 10px;
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
+  margin: 20px 0;
 }
 
 .add-address-form label {
