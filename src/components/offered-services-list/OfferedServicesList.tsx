@@ -1,7 +1,15 @@
 import { useEffect, useState } from "react";
 
+// Определяем интерфейс для элемента сервиса
+interface Service {
+  id: number;
+  title: string;
+  description: string;
+  files?: { id: number; fileData: string }[]; // Опционально, если у вас есть файлы
+}
+
 function OfferedServicesList() {
-  const [services, setServices] = useState([]);
+  const [services, setServices] = useState<Service[]>([]); // Указываем тип
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -16,7 +24,7 @@ function OfferedServicesList() {
       if (!res.ok) {
         throw new Error("Error loading services");
       }
-      const obj = await res.json();
+      const obj: Service[] = await res.json(); // Задаем ожидаемый тип
       setServices(obj);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
@@ -41,9 +49,18 @@ function OfferedServicesList() {
   return (
     <div className="request-list">
       <ul>
-        {services.map((service: { title: string; id: number; description: string }) => (
+        {services.map((service) => (
           <li key={service.id}>
             {service.title} -- {service.description}
+            {service.files && service.files.map((file) => (
+              <div key={file.id}>
+                <img
+                  src={`data:image/jpeg;base64,${file.fileData}`} // Здесь вставляем кодировку
+                  alt={`File ${file.id}`}
+                  style={{ width: '100px', height: '100px' }} // Установите нужные размеры
+                />
+              </div>
+            ))}
           </li>
         ))}
       </ul>
@@ -52,4 +69,3 @@ function OfferedServicesList() {
 }
 
 export default OfferedServicesList;
-
