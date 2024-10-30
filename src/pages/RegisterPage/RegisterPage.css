@@ -1,16 +1,12 @@
 .register-page {
-  width: 100%;
-  max-width: 400px; 
-  min-height: 500px;
-  max-height: 30vh;
-  margin: 20px auto; 
-  padding: 20px; 
-  /* border: 1px solid #d3d3d3; */
-  border-radius: 10px; 
-  background-color: #808080c0; 
-  color: #d3d3d3; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center; 
+  background-color: #808080c0; /* Серый фон */
+  color: #d3d3d3; /* Светло-серый текст */
+  padding: 20px; /* Внутренний отступ */
+  border-radius: 10px; /* Закругление углов */
+  width: 300px; /* Ширина страницы */
+  margin: 0 auto; /* Центрирование страницы */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
+  text-align: left; /* Выравнивание текста влево */
 }
 
 h2 {

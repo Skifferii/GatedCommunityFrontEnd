@@ -1,67 +1,89 @@
 .services-page {
-  width: 100%;
-  max-width: 400px; 
-  min-height: 500px;
-  max-height: 30vh;
-  margin: 20px auto; 
-  padding: 20px; 
-  /* border: 1px solid #d3d3d3;  */
-  border-radius: 10px; 
-  background-color: #808080c0; 
-  color: #d3d3d3; 
+  background-color: #808080c0;
+  color: #d3d3d3;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  margin: 0 auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  text-align: center; 
+  text-align: left;
 }
 
 h2 {
-  text-align: center; 
-  margin-bottom: 20px; 
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .button-group {
-  display: flex; 
-  justify-content: space-around; 
-  margin-bottom: 20px; 
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
 }
 
 .toggle-button {
-  background-color: #6c757d; 
-  color: #d3d3d3; 
+  background-color: #6c757d;
+  color: #d3d3d3;
   padding: 10px;
-  border: none; 
+  border: none;
   border-radius: 5px;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 .toggle-button.active {
-  background-color: #5a6268; 
+  background-color: #5a6268;
 }
 
 .services-list {
-  width: 100%; 
+  width: 100%;
 }
 
 .service-select {
-  padding: 10px; 
-  width: 100%; 
+  padding: 10px;
+  width: 100%;
   border: 1px solid #d3d3d3;
-  border-radius: 4px; 
-  background-color: #505050; 
-  color: #d3d3d3; 
-  margin-bottom: 20px; 
-  box-sizing: border-box; 
+  border-radius: 4px;
+  background-color: #505050;
+  color: #d3d3d3;
+  margin-bottom: 20px;
+  box-sizing: border-box;
 }
 
 .service-details {
-  margin-top: 20px; 
-  background-color: #6c757d; 
-  padding: 20px; 
-  border-radius: 10px; 
-  color: #d3d3d3; 
+  margin-top: 20px;
+  background-color: #6c757d;
+  padding: 20px;
+  border-radius: 10px;
+  color: #d3d3d3;
 }
 
 .service-image {
-  max-width: 100%; 
-  border-radius: 5px; 
-  margin-top: 10px; 
+  max-width: 100%;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.service-details img {
+  cursor: pointer;
+  width: 100px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-image {
+  max-width: 85%;
+  max-height: 85%;
+  border-radius: 8px;
 }

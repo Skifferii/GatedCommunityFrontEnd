@@ -1,10 +1,13 @@
 .admin-button {
-  background-color: #6c757d;
-  color: #d3d3d3;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  background-color: #6c757d; 
+  color: #d3d3d3; 
+  padding: 10px; 
+  border: none; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  margin-right: 10px; 
+  min-width: 100px; 
+  max-width: 150px; 
 }
 
 .admin-button:hover {
