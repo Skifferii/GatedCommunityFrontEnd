@@ -1,19 +1,12 @@
 .requests-page {
-  width: 100%; 
-  max-width: 400px; 
-  min-height: 500px;
-  height: 30vh auto; 
-  max-height: auto;
-  margin: 20px auto;
-  /* border: 1px solid #d3d3d3;  */
-  background-color: #808080c0; 
-  color: #d3d3d3; 
-  padding: 20px; 
+  background-color: #808080c0;
+  color: #d3d3d3;
+  padding: 20px;
   border-radius: 10px;
-  position: relative;
-  /* box-sizing: border-box; */
-  
-
+  width: 300px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  text-align: left;
 }
 
 .button-group {
