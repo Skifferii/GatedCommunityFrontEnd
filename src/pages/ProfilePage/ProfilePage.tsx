@@ -68,6 +68,7 @@ function ProfilePage() {
     localStorage.removeItem("userName");
     setUserData(null);
     navigate("/login");
+    window.location.reload();
   };
 
   const handleDeleteAddress = async () => {
