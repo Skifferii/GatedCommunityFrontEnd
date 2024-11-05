@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import AddAddressForm from "../../components/add-address-form/AddAddressForm";
 import "./AddressesPage.css";
 import AdminButton from "../../components/AdminButton/AdminButton";
+import { Link } from "react-router-dom";
 
 interface Address {
   id: string;
@@ -54,6 +55,8 @@ function AddressesPage() {
 
   return (
     <div className="addresses-page">
+       {localStorage.getItem("accessToken") ? (
+        <>
       <h2>Addresses</h2>
       <div className="button-group">
         <AdminButton
@@ -87,7 +90,7 @@ function AddressesPage() {
               </option>
             ))}
           </select>
-
+          
           {/* Отображение деталей выбранного адреса */}
           {selectedAddress && (
             <div className="address-details">
@@ -100,6 +103,13 @@ function AddressesPage() {
           )}
         </div>
       )}
+       </>
+       ) : (
+        <p>
+          Please, <Link to="/login">Log in</Link>.
+        </p>
+       )
+      }
     </div>
   );
 }
