@@ -13,13 +13,15 @@ import getUserRole from '../components/getUserRole/getUserRole';
 
 function GatedCommunity() {
     const isAdmin = getUserRole() === 'admin';
+    const isAuth = getUserRole() != null;
 
     return (
         <div className="gated-community">
             <nav className="navigation">
                 <Link to="/" className="nav-link">Home</Link>
-                <Link to="/profile" className="nav-link">Profile</Link>
-                <Link to="/requests" className="nav-link">Requests</Link>      
+                {!isAuth &&<Link to="/login"className="nav-link">Log in</Link>}
+                {isAuth &&<Link to="/profile" className="nav-link">Profile</Link>}
+                {isAuth &&<Link to="/requests" className="nav-link">Requests</Link>}      
                 {isAdmin && <Link to="/services" className="nav-link">Service</Link>}
                 {isAdmin && <Link to="/Adreses" className="nav-link">Addresses</Link>} 
                              </nav>
