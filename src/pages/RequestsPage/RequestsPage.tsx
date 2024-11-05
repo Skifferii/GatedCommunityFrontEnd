@@ -1,8 +1,8 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { useState} from "react";
 import RequestList from "../../components/request-list/RequestList";
 import RequestForm from "../../components/RequestForm/RequestForm";
 import "./RequestsPage.css";
+import { Link } from "react-router-dom";
 
 function RequestsPage() {
   const [showComponent, setShowComponent] = useState<string | null>(null);
@@ -65,6 +65,8 @@ function RequestsPage() {
 
   return (
     <div className="requests-page">
+      {localStorage.getItem("accessToken") ? (
+        <>
       <h2>Managing Requests</h2>
       <div className="button-group">
         <button
@@ -119,8 +121,15 @@ function RequestsPage() {
           <p>
             <strong>Address:</strong> {selectedRequest.address}
           </p>
-        </div>
-      )}
+         </div>
+       )}
+     </>
+       ) : (
+        <p>
+          Please, <Link to="/login">Log in</Link>.
+        </p>
+       )
+      }
     </div>
   );
 }

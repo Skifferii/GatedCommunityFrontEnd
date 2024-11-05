@@ -29,6 +29,7 @@ const LoginPage: React.FC = () => {
       localStorage.setItem("userName", username);
 
       navigate("/profile");
+      window.location.reload();
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       setError("Invalid login credentials");
